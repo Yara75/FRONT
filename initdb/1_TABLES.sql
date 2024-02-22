@@ -1,6 +1,6 @@
 drop table personal_info;
 
 create table personal_info (
-    item TEXT not null ,
-    value TEXT not null
+    item TEXT not null unique,
+    value TEXT not null unique
 );
