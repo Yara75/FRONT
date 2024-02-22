@@ -15,7 +15,7 @@ import java.util.List;
 public class PersonalInfoController {
     private final PersonalInfoService personalInfoService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<PersonalInfo> listPersonalInfo(){
         return personalInfoService.getAll();
     }
