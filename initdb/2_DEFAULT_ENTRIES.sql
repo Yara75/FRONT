@@ -1,1 +1,1 @@
-insert into personal_info(item, value) values('Surname', 'Snowden');
+insert into personal_info(item, info) values('Surname', 'Snowden');
