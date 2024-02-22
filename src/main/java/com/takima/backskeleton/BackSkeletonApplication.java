@@ -9,4 +9,9 @@ public class BackSkeletonApplication {
 		SpringApplication.run(BackSkeletonApplication.class, args);
 	}
 
+	@PostConstruct
+	public void init() {
+		System.out.println("#### Application working ####");
+	}
+
 }
