@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PersonalInfoDao extends JpaRepository {
-    @Query("SELECT p.item FROM Personal_info p")
+public interface PersonalInfoDao extends JpaRepository<PersonalInfo, Long> {
+    @Query("SELECT p.item FROM PersonalInfo p")
     List<PersonalInfo> getAll();
 }
