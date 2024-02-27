@@ -14,7 +14,6 @@ import java.util.List;
 public class PersonalInfoService {
     private final PersonalInfoDao personalInfoDao;
 
-    @Transactional
     public List<PersonalInfo> getAll() {
         Iterable<PersonalInfo> allPI = personalInfoDao.getAll();
         List<PersonalInfo> infos = new ArrayList<>();

@@ -1,13 +1,15 @@
-drop table Personal_info;
+drop table PersonalInfo;
 
-create table Personal_info (
+create table PersonalInfo (
+    id serial,
     item TEXT not null unique,
     info TEXT not null unique
 );
 
-drop table Free_entrie;
+drop table FreeEntrie;
 
-create table Free_entrie(
+create table FreeEntrie(
+    id serial,
     section TEXT not null unique,
     info text not null unique
 );
