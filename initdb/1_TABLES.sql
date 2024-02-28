@@ -1,4 +1,4 @@
-drop table PersonalInfo;
+drop table if exists PersonalInfo;
 
 create table PersonalInfo (
     id serial,
@@ -6,7 +6,7 @@ create table PersonalInfo (
     info TEXT not null unique
 );
 
-drop table FreeEntrie;
+drop table if exists FreeEntrie;
 
 create table FreeEntrie(
     id serial,
