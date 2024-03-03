@@ -10,6 +10,15 @@ drop table if exists FreeEntrie;
 
 create table FreeEntrie(
     id serial,
-    section TEXT not null unique,
-    info text not null unique
+    section TEXT not null,
+    info text not null
+);
+
+drop table if exists Diploma;
+
+create table Diploma(
+    id serial,
+    obtentionDate date not null ,
+    name text not null,
+    school text not null
 );
