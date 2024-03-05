@@ -16,7 +16,7 @@ import java.sql.Date;
 public class Diploma {
     @Id
     private Long id;
-    @Column(name="obtentionDate")
+    @Column(name="obtentiondate")
     private Date obtentionDate;
     @Column(name="name")
     private String name;

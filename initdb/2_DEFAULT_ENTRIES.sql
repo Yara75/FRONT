@@ -1,5 +1,5 @@
 -- Table PersonalInfo
-insert into PersonalInfo(item, info) values('Surname', 'Snowden');
+insert into PersonalInfo(item, info) values('First Name', 'Rain');
 
 -- Table FreeEntrie
 insert into freeentrie(section, info) values ('Hobbies', 'Travelling');
@@ -7,3 +7,7 @@ insert into freeentrie(section, info) values ('Hobbies', 'Computer Science');
 insert into freeentrie(section, info) values ('Languages', 'Shell');
 
 -- Table Diploma
+insert into diploma(obtentiondate, name, school) values ('2020-07-07','BAC','International Shibuya School');
+
+-- Table Contact
+insert into contact(type, info) values ('email','rainalyste@outlook.com');
