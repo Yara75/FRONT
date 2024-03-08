@@ -19,4 +19,9 @@ public class PersonalInfoController {
     public List<PersonalInfo> listPersonalInfo(){
         return personalInfoService.getAll();
     }
+    @GetMapping("add")
+    public String addPersonalInfo(@RequestParam(required = true, name="item") String item, @RequestParam(required = true, name="info") String info){
+        personalInfoService.addInfo(item,info);
+        return "Query executed";
+    }
 }

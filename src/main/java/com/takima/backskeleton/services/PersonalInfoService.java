@@ -20,4 +20,8 @@ public class PersonalInfoService {
         allPI.forEach(infos::add);
         return infos;
     }
+
+    public void addInfo(String item, String info) {
+        personalInfoDao.addInfo(item,info);
+    }
 }
