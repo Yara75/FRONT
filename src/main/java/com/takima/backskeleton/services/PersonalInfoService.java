@@ -2,7 +2,6 @@ package com.takima.backskeleton.services;
 
 import com.takima.backskeleton.DAO.PersonalInfoDao;
 import com.takima.backskeleton.models.PersonalInfo;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
