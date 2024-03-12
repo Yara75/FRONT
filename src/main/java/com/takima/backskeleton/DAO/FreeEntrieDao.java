@@ -11,4 +11,7 @@ import java.util.List;
 public interface FreeEntrieDao extends JpaRepository<FreeEntrie, Long> {
     @Query(nativeQuery = true, value = "SELECT f.id, f.section, f.info FROM FreeEntrie f")
     List<FreeEntrie> getAll();
+
+    @Query(nativeQuery = true, value = "INSERT INTO FreeEntrie(section,info) values (?1,?2)")
+    void addFreeEntrie(String section, String info);
 }

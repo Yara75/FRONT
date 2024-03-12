@@ -21,6 +21,6 @@ public class PersonalInfoController {
     @GetMapping("add")
     public String addPersonalInfo(@RequestParam(required = true, name="item") String item, @RequestParam(required = true, name="info") String info){
         personalInfoService.addInfo(item,info);
-        return "Query executed";
+        return item+":"+info+" added\n";
     }
 }

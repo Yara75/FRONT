@@ -19,4 +19,8 @@ public class FreeEntrieService {
         allFE.forEach(entries::add);
         return entries;
     }
+
+    public void addInfo(String section, String info) {
+        freeEntrieDao.addFreeEntrie(section, info);
+    }
 }

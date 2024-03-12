@@ -3,10 +3,7 @@ package com.takima.backskeleton.controllers;
 import com.takima.backskeleton.models.FreeEntrie;
 import com.takima.backskeleton.services.FreeEntrieService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +17,11 @@ public class FreeEntrieController {
     @GetMapping("")
     public List<FreeEntrie> listFreeEntrie(){
         return freeEntrieService.getAll();
+    }
+
+    @GetMapping("add")
+    public String addFreeEntrie(@RequestParam(required = true,name = "section") String section, @RequestParam(required = true,name = "info") String info) {
+        freeEntrieService.addInfo(section,info);
+        return section+":"+info+" added";
     }
 }
