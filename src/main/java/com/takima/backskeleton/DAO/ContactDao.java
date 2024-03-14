@@ -11,4 +11,7 @@ import java.util.List;
 public interface ContactDao extends JpaRepository<Contact,Long> {
     @Query(nativeQuery = true, value = "SELECT c.id, c.type, c.info FROM contact c")
     List<Contact> getAll();
+
+    @Query(nativeQuery = true, value = "INSERT INTO Contact(type,info) values (?1,?2)")
+    void addContact(String type, String info);
 }

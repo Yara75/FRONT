@@ -20,4 +20,8 @@ public class ContactService {
         it.forEach(contacts::add);
         return contacts;
     }
+
+    public void addContact(String type, String info) {
+        contactDao.addContact(type, info);
+    }
 }
