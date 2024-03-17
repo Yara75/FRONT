@@ -14,4 +14,10 @@ public interface PersonalInfoDao extends JpaRepository<PersonalInfo, Long> {
 
     @Query(nativeQuery = true, value = "INSERT INTO PersonalInfo(item,info) VALUES (?1,?2)")
     void addInfo(String item, String info);
+
+    @Query(nativeQuery = true, value = "SELECT p.item FROM PersonalInfo p")
+    List<String> getItems();
+
+    @Query(nativeQuery = true, value = "UPDATE PersonalInfo SET info= ?2 WHERE item= ?1")
+    void updateInfo(String item, String info);
 }

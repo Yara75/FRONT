@@ -21,6 +21,16 @@ public class PersonalInfoService {
     }
 
     public void addInfo(String item, String info) {
-        personalInfoDao.addInfo(item,info);
+        if (getItems().contains(item)) {
+            personalInfoDao.updateInfo(item,info);
+        }
+        else {personalInfoDao.addInfo(item,info);}
+    }
+
+    public List<String> getItems() {
+        Iterable<String> allItem = personalInfoDao.getItems();
+        List<String> list = new ArrayList<>();
+        allItem.forEach(list::add);
+        return list;
     }
 }
