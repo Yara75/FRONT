@@ -2,7 +2,7 @@ drop table if exists PersonalInfo;
 create table PersonalInfo (
     id serial,
     item TEXT not null unique,
-    info TEXT not null unique
+    info TEXT not null
 );
 
 drop table if exists FreeEntrie;
