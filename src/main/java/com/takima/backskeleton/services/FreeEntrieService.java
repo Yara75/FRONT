@@ -21,6 +21,11 @@ public class FreeEntrieService {
     }
 
     public void addInfo(String section, String info) {
-        freeEntrieDao.addFreeEntrie(section, info);
+        try {
+            freeEntrieDao.addFreeEntrie(section, info);
+        } catch (org.springframework.orm.jpa.JpaSystemException e) {
+            System.out.println("Exception handled");
+        }
+
     }
 }

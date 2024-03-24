@@ -21,10 +21,14 @@ public class PersonalInfoService {
     }
 
     public void addInfo(String item, String info) {
-        if (getItems().contains(item)) {
-            personalInfoDao.updateInfo(item,info);
+        try {
+            if (getItems().contains(item)) {
+                personalInfoDao.updateInfo(item,info);
+            }
+            else {personalInfoDao.addInfo(item,info);}
+        } catch (org.springframework.orm.jpa.JpaSystemException e) {
+            System.out.println("Exception handled");
         }
-        else {personalInfoDao.addInfo(item,info);}
     }
 
     public List<String> getItems() {

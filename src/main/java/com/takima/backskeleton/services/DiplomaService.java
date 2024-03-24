@@ -22,6 +22,10 @@ public class DiplomaService {
     }
 
     public void addDiploma(Date date, String name, String school) {
-        diplomaDao.addDiploma(date, name, school);
+        try {
+            diplomaDao.addDiploma(date, name, school);
+        } catch (org.springframework.orm.jpa.JpaSystemException e) {
+            System.out.println("Exception handled");
+        }
     }
 }

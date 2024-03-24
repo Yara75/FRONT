@@ -22,6 +22,10 @@ public class ContactService {
     }
 
     public void addContact(String type, String info) {
-        contactDao.addContact(type, info);
+        try {
+            contactDao.addContact(type, info);
+        } catch (org.springframework.orm.jpa.JpaSystemException e) {
+            System.out.println("Exception handled");
+        }
     }
 }
