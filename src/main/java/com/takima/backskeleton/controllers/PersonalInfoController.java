@@ -23,4 +23,15 @@ public class PersonalInfoController {
         personalInfoService.addInfo(item,info);
         return item+":"+info+" added\n";
     }
+
+    @GetMapping("addall")
+    public String addAllPersonalInfo(@RequestParam(required = false, name="nom") String surname, @RequestParam(required = false, name="prenom") String name, @RequestParam(required = false, name = "age") Integer age, @RequestParam(required = false, name="adresse") String address, @RequestParam(required = false, name="courriel") String mail, @RequestParam(required = false, name="poste") String job) {
+        if (!(surname ==null)) {personalInfoService.addInfo("surname",surname);}
+        if (!(name ==null)) {personalInfoService.addInfo("name",name);}
+        if (!(age ==null)) {personalInfoService.addInfo("age",age.toString());}
+        if (!(address ==null)) {personalInfoService.addInfo("address",address);}
+        if (!(mail==null)) {personalInfoService.addInfo("mail",mail);}
+        if (!(job==null)) {personalInfoService.addInfo("job",job);}
+        return "all info added";
+    }
 }
