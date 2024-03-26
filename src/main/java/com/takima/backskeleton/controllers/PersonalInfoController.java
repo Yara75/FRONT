@@ -26,12 +26,12 @@ public class PersonalInfoController {
 
     @GetMapping("addall")
     public String addAllPersonalInfo(@RequestParam(required = false, name="nom") String surname, @RequestParam(required = false, name="prenom") String name, @RequestParam(required = false, name = "age") Integer age, @RequestParam(required = false, name="adresse") String address, @RequestParam(required = false, name="courriel") String mail, @RequestParam(required = false, name="poste") String job) {
-        if (!(surname ==null)) {personalInfoService.addInfo("surname",surname);}
-        if (!(name ==null)) {personalInfoService.addInfo("name",name);}
-        if (!(age ==null)) {personalInfoService.addInfo("age",age.toString());}
-        if (!(address ==null)) {personalInfoService.addInfo("address",address);}
-        if (!(mail==null)) {personalInfoService.addInfo("mail",mail);}
-        if (!(job==null)) {personalInfoService.addInfo("job",job);}
+        if (!(surname==null)) {personalInfoService.addInfo("surname",surname);System.out.println("add surname");}
+        if (!(name ==null)) {personalInfoService.addInfo("name",name);System.out.println("add name");}
+        if (!(age ==null)) {personalInfoService.addInfo("age",age.toString());System.out.println("add age");}
+        if (!(address ==null)) {personalInfoService.addInfo("address",address);System.out.println("add address");}
+        if (!(mail==null)) {personalInfoService.addInfo("mail",mail);System.out.println("add mail");}
+        if (!(job==null)) {personalInfoService.addInfo("job",job);System.out.println("add job");}
         return "all info added";
     }
 }
