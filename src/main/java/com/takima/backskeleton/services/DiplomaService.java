@@ -2,6 +2,7 @@ package com.takima.backskeleton.services;
 
 import com.takima.backskeleton.DAO.DiplomaDao;
 import com.takima.backskeleton.models.Diploma;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import java.util.List;
 public class DiplomaService {
     private final DiplomaDao diplomaDao;
 
+    @Transactional
     public List<Diploma> getAll(){
         Iterable<Diploma> it = diplomaDao.getAll();
         List<Diploma> diplomas = new ArrayList<>();
@@ -21,6 +23,7 @@ public class DiplomaService {
         return diplomas;
     }
 
+    @Transactional
     public void addDiploma(Date date, String name, String school) {
         try {
             diplomaDao.addDiploma(date, name, school);
