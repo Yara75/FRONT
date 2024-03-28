@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
@@ -16,34 +17,42 @@ public class PersonalInfoService {
 
     @Transactional
     public List<PersonalInfo> getAll() {
-        Iterable<PersonalInfo> allPI = personalInfoDao.getAll();
+        Iterable<PersonalInfo> allPI = personalInfoDao.findAll();
         List<PersonalInfo> infos = new ArrayList<>();
         allPI.forEach(infos::add);
         return infos;
     }
 
     @Transactional
-    public void addInfo(String item, String info) {
-        try {
-            if (getItems().contains(item)) {
-                personalInfoDao.updateInfo(item,info);
-            }
-            else {personalInfoDao.addInfo(item,info);}
-        } catch (org.springframework.orm.jpa.JpaSystemException e) {
-            System.out.println("Exception handled");
+    public void addInfo(PersonalInfo personalInfoTmp){
+        if (personalInfoDao.getItems().contains(personalInfoTmp.getItem())) {
+            personalInfoDao.updateInfo(personalInfoTmp.getItem(),personalInfoTmp.getInfo());
+        } else {
+            personalInfoDao.save(personalInfoTmp);
         }
     }
 
     @Transactional
-    public List<String> getItems() {
-        Iterable<String> allItem = personalInfoDao.getItems();
-        List<String> list = new ArrayList<>();
-        allItem.forEach(list::add);
-        return list;
+    public PersonalInfo getPersonalInfoById(Long id) {
+        return personalInfoDao.getReferenceById(id);
     }
 
     @Transactional
     public void deleteById(Long id) {
+        personalInfoDao.deleteById(id);
+    }
+
+    @Transactional
+    public void updatePersonalInfo(PersonalInfo personalInfoTmp, Long id) {
+        if (personalInfoDao.getItems().contains(personalInfoTmp.getItem())) {
+            personalInfoDao.updateInfo(personalInfoTmp.getItem(),personalInfoTmp.getInfo());
+        } else {
+            personalInfoDao.save(personalInfoTmp);
+        }
+    }
+
+    @Transactional
+    public void deletePersonalInfoById(Long id) {
         personalInfoDao.deleteById(id);
     }
 }
