@@ -17,7 +17,7 @@ public class ContactController {
     @GetMapping("")
     public List<Contact> listContact(){return contactService.getAll();}
 
-    @GetMapping("add")
+    @PostMapping("add")
     public String addContact(@RequestParam(required = true, name = "type") String type, @RequestParam(required = true, name="info") String info) {
         contactService.addContact(type, info);
         return type+":"+info+" added";

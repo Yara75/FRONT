@@ -19,7 +19,7 @@ public class FreeEntrieController {
         return freeEntrieService.getAll();
     }
 
-    @GetMapping("add")
+    @PostMapping("add")
     public String addFreeEntrie(@RequestParam(required = true,name = "section") String section, @RequestParam(required = true,name = "info") String info) {
         freeEntrieService.addInfo(section,info);
         return section+":"+info+" added";
