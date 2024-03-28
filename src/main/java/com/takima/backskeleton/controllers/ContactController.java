@@ -28,4 +28,14 @@ public class ContactController {
     public Optional<Contact> findContactById(@PathVariable Long id) {
         return contactService.findById(id);
     }
+
+    @PostMapping("/{id}")
+    public void updateContactById(@RequestBody Contact contactTmp, @PathVariable Long id) {
+        contactService.updateContactById(contactTmp, id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteContactById(@PathVariable Long id) {
+        contactService.deleteContactById(id);
+    }
 }

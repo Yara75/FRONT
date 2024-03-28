@@ -37,4 +37,18 @@ public class ContactService {
     public Optional<Contact> findById(Long id) {
         return contactDao.findById(id);
     }
+
+    @Transactional
+    public void updateContactById(Contact contactTmp, Long id) {
+        if (contactDao.findById(id).isEmpty()) {
+            contactDao.save(contactTmp);
+        } else {
+            contactDao.updateContactById(id, contactTmp.getType(), contactTmp.getInfo());
+        }
+    }
+
+    @Transactional
+    public void deleteContactById(Long id) {
+        contactDao.deleteById(id);
+    }
 }
