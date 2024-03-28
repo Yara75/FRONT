@@ -18,13 +18,13 @@ public class PersonalInfoController {
     public List<PersonalInfo> listPersonalInfo(){
         return personalInfoService.getAll();
     }
-    @GetMapping("add")
+    @PostMapping("add")
     public String addPersonalInfo(@RequestParam(required = true, name="item") String item, @RequestParam(required = true, name="info") String info){
         personalInfoService.addInfo(item,info);
         return item+":"+info+" added\n";
     }
 
-    @GetMapping("addall")
+    @PostMapping("addall")
     public String addAllPersonalInfo(@RequestParam(required = false, name="nom") String surname, @RequestParam(required = false, name="prenom") String name, @RequestParam(required = false, name = "age") Integer age, @RequestParam(required = false, name="adresse") String address, @RequestParam(required = false, name="courriel") String mail, @RequestParam(required = false, name="poste") String job) {
         if (!(surname==null)) {personalInfoService.addInfo("surname",surname);System.out.println("add surname");}
         if (!(name ==null)) {personalInfoService.addInfo("name",name);System.out.println("add name");}
