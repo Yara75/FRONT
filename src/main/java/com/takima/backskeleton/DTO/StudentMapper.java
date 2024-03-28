@@ -1,7 +1,5 @@
 package com.takima.backskeleton.DTO;
 
-import com.takima.backskeleton.models.Student;
-
 import java.io.IOException;
 
 public class StudentMapper {
