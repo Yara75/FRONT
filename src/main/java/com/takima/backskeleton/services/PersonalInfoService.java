@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -33,8 +34,8 @@ public class PersonalInfoService {
     }
 
     @Transactional
-    public PersonalInfo getPersonalInfoById(Long id) {
-        return personalInfoDao.getReferenceById(id);
+    public Optional<PersonalInfo> getPersonalInfoById(Long id) {
+        return personalInfoDao.findById(id);
     }
 
     @Transactional

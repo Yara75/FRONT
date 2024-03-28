@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RequestMapping("PersonalInfo")
@@ -20,7 +21,7 @@ public class PersonalInfoController {
     }
 
     @GetMapping("/{id}")
-    public PersonalInfo getPersonalInfoById(@PathVariable Long id) {
+    public Optional<PersonalInfo> getPersonalInfoById(@PathVariable Long id) {
         return personalInfoService.getPersonalInfoById(id);
     }
 

@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RequestMapping("Contact")
@@ -15,11 +16,16 @@ import java.util.List;
 public class ContactController {
     private final ContactService contactService;
     @GetMapping("")
-    public List<Contact> listContact(){return contactService.getAll();}
+    public List<Contact> listContact(){return contactService.findall();}
 
-    @PostMapping("add")
-    public String addContact(@RequestParam(required = true, name = "type") String type, @RequestParam(required = true, name="info") String info) {
-        contactService.addContact(type, info);
-        return type+":"+info+" added";
+    @PostMapping("")
+    public String addContact(@RequestBody Contact contactTmp) {
+        contactService.addContact(contactTmp);
+        return contactTmp.getType()+":"+contactTmp.getInfo()+" added";
+    }
+
+    @PostMapping("/{id}")
+    public Optional<Contact> findContactById(@PathVariable Long id) {
+        return contactService.findById(id);
     }
 }
