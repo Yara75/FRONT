@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RequestMapping("FreeEntrie")
@@ -15,13 +16,26 @@ public class FreeEntrieController {
     private final FreeEntrieService freeEntrieService;
 
     @GetMapping("")
-    public List<FreeEntrie> listFreeEntrie(){
-        return freeEntrieService.getAll();
+    public List<FreeEntrie> listEntries(){
+        return freeEntrieService.findAll();
     }
 
+    @PostMapping("/{id}")
+    public Optional<FreeEntrie> getFreeEntrieById(@PathVariable Long id) {
+        return freeEntrieService.findAllById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {freeEntrieService.deleteById(id);}
+
     @PostMapping("add")
-    public String addFreeEntrie(@RequestParam(required = true,name = "section") String section, @RequestParam(required = true,name = "info") String info) {
-        freeEntrieService.addInfo(section,info);
-        return section+":"+info+" added";
+    public String addFreeEntrie(@RequestBody FreeEntrie freeEntrieTmp) {
+        freeEntrieService.addEntrie(freeEntrieTmp);
+        return freeEntrieTmp.getSection()+":"+freeEntrieTmp.getInfo()+" added";
+    }
+
+    @PostMapping("/{id}")
+    public void updateEntrieById(@RequestBody FreeEntrie freeEntrieTmp, @PathVariable Long id) {
+        freeEntrieService.updateInfo(freeEntrieTmp, id);
     }
 }

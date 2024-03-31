@@ -34,7 +34,7 @@ public class FreeEntrieService {
     }
 
     @Transactional
-    public void addInfo(FreeEntrie freeEntrieTmp) {
+    public void addEntrie(FreeEntrie freeEntrieTmp) {
         freeEntrieDao.save(freeEntrieTmp);
     }
 
