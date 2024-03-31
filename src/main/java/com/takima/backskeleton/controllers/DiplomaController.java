@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RequestMapping("Diploma")
@@ -15,11 +16,26 @@ import java.util.List;
 public class DiplomaController {
     private final DiplomaService diplomaService;
     @GetMapping("")
-    public List<Diploma> listDiploma(){return diplomaService.getAll();}
+    public List<Diploma> listDiploma(){return diplomaService.findAll();}
 
-    @PostMapping("add")
-    public String addDiploma(@RequestParam(required = true, name = "obtentionDate")Date obtentionDate, @RequestParam(required = true,name = "name") String name, @RequestParam(required = true,name = "school") String school){
-        diplomaService.addDiploma(obtentionDate, name, school);
-        return name+", "+school+" ("+obtentionDate+")";
+    @PostMapping("")
+    public String addDiploma(@RequestBody Diploma diplomaTmp){
+        diplomaService.addDiploma(diplomaTmp);
+        return diplomaTmp.getName()+", "+diplomaTmp.getSchool()+" ("+diplomaTmp.getObtentionDate()+")";
+    }
+
+    @PostMapping("/{id}")
+    public void updateDiplomaById(@PathVariable Long id, @RequestBody Diploma diplomaTmp) {
+        diplomaService.updateById(diplomaTmp, id);
+    }
+
+    @PostMapping("/{id}")
+    public Optional<Diploma> findDiplomaById(@PathVariable Long id) {
+        return diplomaService.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteDiplomaById(@PathVariable Long id) {
+        diplomaService.deleteById(id);
     }
 }
