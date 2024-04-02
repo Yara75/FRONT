@@ -8,8 +8,14 @@ insert into diploma(obtentiondate, name, school) values ('2020-07-07','BAC','Int
 insert into contact(type, info) values ('email','rainalyste@outlook.com');
 
 -- Table ExPro
-insert into ExPro(nameC, beginD, endD, job) values ('BDF', 2022-09-05, 2025-08-28, 'ingénieur IT');
-insert into ExPro(nameC, beginD, endD, job) values ('BDF', 2021-07-28, 2021-08-30, 'stagiaire IT');
+insert into ExPro(nameC, beginD, endD, job) values ('BDF', '2022-09-05', '2025-08-28', 'ingénieur IT');
+insert into ExPro(nameC, beginD, endD, job) values ('BDF', '2021-07-28', '2021-08-30', 'stagiaire IT');
 
 -- Table Skills
 insert into Skills(domains, details) values ('Programmation', 'C#');
+
+-- Table Hobbie
+insert into hobbie(description) values ('Aikido at professional level');
+
+--Table Certif
+insert into certif(name, domain) values ('SecNum Edu', 'Cyberprevention');
