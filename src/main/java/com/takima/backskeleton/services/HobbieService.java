@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class HobbieService {
-    HobbieDao hobbieDao;
+    private final HobbieDao hobbieDao;
 
     @Transactional
     public List<Hobbie> findAll() {

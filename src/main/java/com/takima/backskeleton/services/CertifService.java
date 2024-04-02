@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class CertifService {
-    private CertifDao certifDao;
+    private final CertifDao certifDao;
 
     @Transactional
     public List<Certif> findAll() {
