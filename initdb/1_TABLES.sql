@@ -48,4 +48,14 @@ create table Certif(
     id serial primary key,
     name text not null ,
     domain text not null
-)
+);
+
+drop table if exists Message;
+create table Message(
+    id serial primary key ,
+    surname text not null ,
+    name text not null ,
+    contact text not null ,
+    date date not null default now(),
+    messageBody text not null
+);
