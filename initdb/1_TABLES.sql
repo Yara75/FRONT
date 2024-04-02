@@ -26,4 +26,20 @@ create table Contact(
     id serial primary key ,
     type text not null,
     info text not null unique
-)
+);
+
+drop table if exists ExPro;
+create table ExPro(
+    id serial primary key ,
+    nameC text not null,
+    beginD date not null unique,
+    endD date not null unique,
+    job text not null
+);
+
+drop table if exists Skills;
+create table Skills(
+    id serial primary key,
+    domains text not null,
+    details text not null
+);
