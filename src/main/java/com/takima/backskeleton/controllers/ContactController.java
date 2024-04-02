@@ -24,7 +24,7 @@ public class ContactController {
         return contactTmp.getType()+":"+contactTmp.getInfo()+" added";
     }
 
-    @PostMapping("/{id}")
+    @GetMapping("/{id}")
     public Optional<Contact> findContactById(@PathVariable Long id) {
         return contactService.findById(id);
     }

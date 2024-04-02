@@ -29,7 +29,7 @@ public class DiplomaController {
         diplomaService.updateById(diplomaTmp, id);
     }
 
-    @PostMapping("/{id}")
+    @GetMapping("/{id}")
     public Optional<Diploma> findDiplomaById(@PathVariable Long id) {
         return diplomaService.findById(id);
     }

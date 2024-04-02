@@ -20,7 +20,7 @@ public class FreeEntrieController {
         return freeEntrieService.findAll();
     }
 
-    @PostMapping("/{id}")
+    @GetMapping("/{id}")
     public Optional<FreeEntrie> getFreeEntrieById(@PathVariable Long id) {
         return freeEntrieService.findAllById(id);
     }
