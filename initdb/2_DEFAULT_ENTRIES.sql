@@ -1,5 +1,5 @@
 -- Table PersonalInfo
-insert into PersonalInfo(item, info) values('name', 'Rain');
+insert into PersonalInfo(surname, name, birth) values('Rain', 'Suzune', '06-06-2006');
 
 -- Table FreeEntrie
 insert into freeentrie(section, info) values ('Hobbies', 'Travelling');

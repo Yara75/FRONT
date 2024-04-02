@@ -26,11 +26,8 @@ public class PersonalInfoService {
 
     @Transactional
     public void addInfo(PersonalInfo personalInfoTmp){
-        if (personalInfoDao.getItems().contains(personalInfoTmp.getItem())) {
-            personalInfoDao.updateInfo(personalInfoTmp.getItem(),personalInfoTmp.getInfo());
-        } else {
-            personalInfoDao.save(personalInfoTmp);
-        }
+        personalInfoDao.deleteAll();
+        personalInfoDao.save(personalInfoTmp);
     }
 
     @Transactional
@@ -45,11 +42,7 @@ public class PersonalInfoService {
 
     @Transactional
     public void updatePersonalInfo(PersonalInfo personalInfoTmp, Long id) {
-        if (personalInfoDao.getItems().contains(personalInfoTmp.getItem())) {
-            personalInfoDao.updateInfo(personalInfoTmp.getItem(),personalInfoTmp.getInfo());
-        } else {
-            personalInfoDao.save(personalInfoTmp);
-        }
+        personalInfoDao.updateInfo(personalInfoTmp.getSurname(), personalInfoTmp.getName(), personalInfoTmp.getBirth(), id);
     }
 
     @Transactional

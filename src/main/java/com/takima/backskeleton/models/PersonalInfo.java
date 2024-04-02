@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Date;
+
 
 @Setter
 @Getter
@@ -13,16 +15,24 @@ public class PersonalInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nom;
-    private String prenom;
+
+    @Column(name = "surname")
+    private String surname;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "birth")
+    private Date birth;
 
     public PersonalInfo() {
         // Constructeur par défaut
     }
 
-    public PersonalInfo(String nom, String prenom) {
-        this.nom = nom;
-        this.prenom = prenom;
+    public PersonalInfo(String surname, String name, Date birth) {
+        this.surname = surname;
+        this.name = name;
+
     }
 
 }
