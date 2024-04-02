@@ -6,13 +6,6 @@ create table PersonalInfo (
     birth date
 );
 
-drop table if exists FreeEntrie;
-create table FreeEntrie(
-    id serial PRIMARY KEY ,
-    section TEXT not null,
-    info text not null
-);
-
 drop table if exists Diploma;
 create table Diploma(
     id serial primary key ,
@@ -43,3 +36,16 @@ create table Skills(
     domains text not null,
     details text not null
 );
+
+drop table if exists Hobbie;
+create table Hobbie(
+    id serial primary key,
+    description text not null
+);
+
+drop table if exists Certif;
+create table Certif(
+    id serial primary key,
+    name text not null ,
+    domain text not null
+)

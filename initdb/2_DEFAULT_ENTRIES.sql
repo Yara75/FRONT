@@ -1,12 +1,6 @@
 -- Table PersonalInfo
 insert into PersonalInfo(surname, name, birth) values('Rain', 'Suzune', '06-06-2006');
 
--- Table FreeEntrie
-insert into freeentrie(section, info) values ('Hobbies', 'Travelling');
-insert into freeentrie(section, info) values ('Hobbies', 'Computer Science');
-insert into freeentrie(section, info) values ('Programming Languages', 'Shell');
-insert into freeentrie(section, info) values ('Programming Languages', 'Python');
-
 -- Table Diploma
 insert into diploma(obtentiondate, name, school) values ('2020-07-07','BAC','International Shibuya School');
 
