@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CvService } from '../services/cv.service';
-import { Infos } from '../models/infos.model';
-import { Diploma, Expro, Skills, Certif } from '../models/infos.model';
+import { Infos, Contact, PersonalInfo } from '../models/infos.model';
+import { Diploma, Expro, Skills, Certif, Hobbie } from '../models/infos.model';
 
 @Component({
   selector: 'app-cv',
@@ -22,12 +22,20 @@ export class CvComponent implements OnInit {
   domains: string = '';
   details: string = '';
   domain: string = '';
+  description: string = '';
+  type: string = '';
+  info: string = '';
+  surname: string = '';
+  birth: Date = new Date();
 
   infos: any[] | undefined;
   diplomes : any[] | undefined;
   expro: any[] | undefined;
   skills: any[] | undefined;
   certif: any[] | undefined;
+  hobbie: any[] | undefined;
+  contact: any[] | undefined;
+  personalinfo: any[] | undefined;
 
   constructor(private cvService: CvService) { }
 
@@ -134,7 +142,74 @@ export class CvComponent implements OnInit {
         }
     );
   }
+
   
+  submitFormHobbie(): void {
+    if (!this.description) {
+        console.log('Veuillez entrer des données valides.');
+        return; 
+    }  
+    console.log('ok nous sommes passés');
+
+    const hobbie: Hobbie = {
+      description: this.description
+    };
+    
+    this.cvService.addHobbie(hobbie).subscribe(
+        (data: any) => {
+            console.log('Infos enregistrées avec succès !', data);
+        },
+        (error: any) => {
+            console.log('Erreur lors de l\'enregistrement des infos : ', error);
+        }
+    );
+  }
+
+  submitFormContact(): void {
+    if (!this.type || !this.info) {
+        console.log('Veuillez entrer des données valides.');
+        return; 
+    }  
+    console.log('ok nous sommes passés');
+
+    const contact: Contact = {
+      type: this.type,
+      info: this.info
+    };
+    
+    this.cvService.addContact(contact).subscribe(
+        (data: any) => {
+            console.log('Infos enregistrées avec succès !', data);
+        },
+        (error: any) => {
+            console.log('Erreur lors de l\'enregistrement des infos : ', error);
+        }
+    );
+  }
+
+  submitFormPersonalinfo(): void {
+    if (!this.surname || !this.name || !this.birth) {
+        console.log('Veuillez entrer des données valides.');
+        return; 
+    }  
+    console.log('ok nous sommes passés');
+
+    const personalinfo: PersonalInfo = {
+      surname: this.surname,
+      name: this.name,
+      birth: this.birth
+    };
+    
+    this.cvService.addPersonalInfo(personalinfo).subscribe(
+        (data: any) => {
+            console.log('Infos enregistrées avec succès !', data);
+        },
+        (error: any) => {
+            console.log('Erreur lors de l\'enregistrement des infos : ', error);
+        }
+    );
+  }
 }
+
 
 

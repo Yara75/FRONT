@@ -4,6 +4,13 @@ export interface Infos {
     prenom: string;
 }
 
+export interface PersonalInfo{
+    id?: number;
+    surname: string;
+    name: string;
+    birth: Date;
+}
+
 export interface Diploma {
     id? : number;
     obtentionDate : Date;
@@ -31,5 +38,15 @@ export interface Certif{
     domain: string;
 }
 
+export interface Hobbie{
+    id?: number;
+    description: string;
+}
+
+export interface Contact{
+    id?: number;
+    type: string;
+    info: string;
+}
 
 

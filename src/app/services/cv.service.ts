@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Diploma, Expro, Infos } from '../models/infos.model';
-import { Certif, Skills } from 'models/home.model';
+import { Diploma, Expro, Infos, PersonalInfo } from '../models/infos.model';
+import { Certif, Skills, Hobbie, Contact } from 'models/home.model';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +42,21 @@ export class CvService {
     console.log('Appel de la méthode addCertif() avec les informations:', certif);
     return this.http.post<any>('http://localhost:8080/Certif', certif);
   }  
+
+  addHobbie(hobbie : Hobbie): Observable<any>{
+    console.log('Appel de la méthode addCertif() avec les informations:', hobbie);
+    return this.http.post<any>('http://localhost:8080/Hobbie', hobbie);
+  } 
+
+  addContact(contact : Contact): Observable<any>{
+    console.log('Appel de la méthode addContact() avec les informations:', contact);
+    return this.http.post<any>('http://localhost:8080/Contact', contact);
+  }
+
+  addPersonalInfo(personalinfo : PersonalInfo): Observable<any>{
+    console.log('Appel de la méthode addpersonalinfo() avec les informations:', personalinfo);
+    return this.http.post<any>('http://localhost:8080/PersonalInfo', personalinfo);
+  }
 }
 
 
