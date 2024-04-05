@@ -25,7 +25,7 @@ public class MessageController {
         return messageService.findById(id);
     }
 
-    @PostMapping("/{id}")
+    @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id) {messageService.deleteById(id);}
 
     @PostMapping("")
