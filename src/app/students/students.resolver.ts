@@ -1,8 +1,22 @@
-import { inject } from "@angular/core"
-import { ResolveFn } from "@angular/router"
-import { Student } from "models/student.model"
-import { StudentService } from "services/student.service"
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { catchError, tap } from "rxjs/operators";
+import { Student } from "models/student.model";
+import { StudentService } from "services/student.service";
 
-export const StudentsResolver: ResolveFn<Student[]> = () => {
-  return inject(StudentService).findAll()
+@Injectable({
+  providedIn: "root",
+})
+export class StudentsResolver {
+  constructor(private studentService: StudentService) {}
+
+  resolve(): Observable<Student[]> {
+    return this.studentService.findAll().pipe(
+      tap(students => console.log('Students resolved:', students)),
+      catchError(error => {
+        console.error('Error in StudentsResolver:', error);
+        throw error; // Rethrow the error to prevent the route from being resolved
+      })
+    );
+  }
 }

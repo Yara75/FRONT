@@ -6,11 +6,16 @@
   flex-direction: column;
 
   .title {
-    font-family: Caveat, sans-serif;
-    font-size: 4.5em;
-    font-weight: 700;
-    margin: 30px 0;
+    font-family: 'Quicksand', cursive;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #db3434;
+    letter-spacing: 2px;
+    margin: 10px 0;
+    font-style: italic; 
   }
+  
 
   .welcome {
     text-align: center;

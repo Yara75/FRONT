@@ -1,28 +1,88 @@
-<span class="title">Bonjour à vous !</span>
+<style>
+  .label-container label {
+    text-align: left;
+    margin-bottom: 10px; 
+  }
+  .label-container {
+    font-size: 17px; 
+    border: 1px solid #000;
+    padding: 10px; 
+    display: inline-block;
+    width: 700px; 
+    height: 150px;
+    box-sizing: border-box;
+    margin-left: 10px; 
+  }
+</style>
+
+<span class="title">Bonjour sur créerunCV.com !</span>
 <div>
-  <span class="welcome">Bienvenue sur ce super template de code Angular </span>
-  <img src="assets/sun.gif" height="100">
+  <span class="welcome">Créez votre nouveau CV </span>
+  <img src="assets/log.png" height="80">
 </div>
-<span class="title">Qu'est ce que vous allez faire pendant ce cours ?</span>
-<div class="card-group">
-  <div class="card">
-    <img class="card-img-top" src="assets/img1.png" alt="Card image cap" />
-    <div class="card-body">
-      <p class="card-text">
-        Une merveilleuse web app from scratch JAVA Spring - Angular
-      </p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="assets/img2.png" alt="Card image cap" />
-    <div class="card-body">
-      <p class="card-text">Avec une super team de 3 ou 4 personnes</p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="assets/img3.png" alt="Card image cap" />
-    <div class="card-body">
-      <p class="card-text">Encadrés par un intervenant prêt à dégainer sa magie noire pour vous aider</p>
-    </div>
-  </div>
+<span class="title">Voici un modèle de CV :</span>
+
+<div class="label-container">
+  <label class="label">Informations personnelles</label>
+  <ul>
+    <li *ngFor="let info of infos">
+      {{ info.id }} - {{ info.surname }} - {{ info.name }} - {{ info.birth }}
+    </li>
+  </ul>
 </div>
+
+<div class="label-container">
+  <label class="label">Diplômes</label>
+  <ul>
+    <li *ngFor="let diplome of diplomes">
+      {{ diplome.id }} - {{ diplome.name }} - {{ diplome.school }} - {{ diplome.obtentionDate }}
+    </li>
+  </ul>
+</div>
+
+<div class="label-container">
+  <label class="label">Expériences professionnelles </label>
+  <ul>
+    <li *ngFor="let experience of expro">
+      {{ experience.id }} - {{ experience.nameC }} - {{ experience.beginD }} - {{ experience.endD }} - {{ experience.job }}
+    </li>
+  </ul>
+</div>
+
+<div class="label-container">
+  <label class="label">Compétences techniques </label>
+  <ul>
+    <li *ngFor="let skill of skills">
+      {{ skill.id }} - {{ skill.domains }} - {{ skill.details }}
+    </li>
+  </ul>
+</div>
+
+<div class="label-container">
+  <label class="label">Certifications</label>
+  <ul>
+    <li *ngFor="let certif of certif">
+      {{ certif.id }} - {{ certif.name }} - {{ certif.domain }}
+    </li>
+  </ul>
+</div>
+
+<div class="label-container">
+  <label class="label">Certifications</label>
+  <ul>
+    <li *ngFor="let hobbie of hobbie">
+      {{ hobbie.id }} - {{ hobbie.description }}
+    </li>
+  </ul>
+</div>
+
+<div class="label-container">
+  <label class="label">Certifications</label>
+  <ul>
+    <li *ngFor="let contact of contact">
+      {{ contact.id }} - {{ contact.type }} - {{ contact.info }}
+    </li>
+  </ul>
+</div>
+
+
