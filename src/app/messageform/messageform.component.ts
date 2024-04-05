@@ -8,7 +8,7 @@ import { MessageService } from 'services/message.service';
   styleUrls: ['./messageform.component.scss']
 })
 export class MessageFormComponent {
-  surname: string = ''; name: string = ''; contact: string = ''; date: Date = new Date; messageBody: string = '';
+  surname: string = ''; name: string = ''; contact: string = ''; date: Date = new Date; messagebody: string = '';
 
   message: any[]|undefined;
 
@@ -17,7 +17,7 @@ export class MessageFormComponent {
   sendMessage(): void {
     console.log("Message sending");
     const message: Message = {
-      name: this.name, surname: this.surname, contact: this.contact, date: this.date, messageBody: this.messageBody
+      name: this.name, surname: this.surname, contact: this.contact, date: this.date, messagebody: this.messagebody
     }
     this.messageService.sendMessage(message).subscribe(
       (data: any[]) => {this.message = data;},

@@ -49,5 +49,5 @@ export interface Message {
     name: string;
     contact: string;
     date: Date;
-    messageBody: string;
+    messagebody: string;
 }
