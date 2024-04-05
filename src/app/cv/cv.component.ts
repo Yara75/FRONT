@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CvService } from '../services/cv.service';
 import { Infos } from '../models/infos.model';
+import { Diploma, Expro, Skills, Certif } from '../models/infos.model';
 
 @Component({
   selector: 'app-cv',
@@ -11,13 +12,27 @@ export class CvComponent implements OnInit {
 
   nom: string = '';
   prenom: string = '';
+  obtentionDate : Date = new Date();
+  name: string = '';
+  school: string = '';
+  nameC: string = '';
+  beginD: Date = new Date();
+  endD: Date = new Date();
+  job: string = '';
+  domains: string = '';
+  details: string = '';
+  domain: string = '';
 
   infos: any[] | undefined;
+  diplomes : any[] | undefined;
+  expro: any[] | undefined;
+  skills: any[] | undefined;
+  certif: any[] | undefined;
 
   constructor(private cvService: CvService) { }
 
   ngOnInit(): void {
-    this.loadInfos();
+   // this.loadInfos();
   }
 
   loadInfos(): void {
@@ -33,39 +48,93 @@ export class CvComponent implements OnInit {
   }
 
   submitForm(): void {
-    // Vérification que les valeurs de nom et prénom ne sont pas vides
-    if (!this.nom || !this.prenom) {
+    if (!this.name || !this.school || !this.obtentionDate) {
         console.log('Veuillez entrer un nom et un prénom valides.');
-        // Gérer l'erreur ici, comme afficher un message à l'utilisateur
-        return; // Sortir de la fonction si les valeurs sont vides
-    }
+        return; 
+    }  
 
-    console.log('Nom 2 :', this.nom);
-    console.log('Prénom:', this.prenom);
-    
-    // Création de l'objet contenant les informations à envoyer
-    const info: Infos = {
-        nom: this.nom,
-        prenom: this.prenom
+    const diplomes: Diploma = {
+      obtentionDate: this.obtentionDate,
+      name: this.name,
+      school: this.school
     };
 
-    // Envoi de la requête HTTP vers le backend
-    this.cvService.enregistrerInfos(info).subscribe(
+    this.cvService.addDiploma(diplomes).subscribe(
         (data: any) => {
             console.log('Infos enregistrées avec succès !', data);
-            // Vous pouvez ajouter ici du code pour recharger les données ou afficher un message de succès.
         },
         (error: any) => {
             console.log('Erreur lors de l\'enregistrement des infos : ', error);
-            // Gérer les erreurs ici, comme afficher un message d'erreur à l'utilisateur.
         }
     );
-
   }
 
+  submitFormPro(): void {
+    if (!this.nameC || !this.beginD || !this.endD || !this.job) {
+        console.log('Veuillez entrer des données valides.');
+        return; 
+    }  
+    console.log('ok nous sommes passés');
+    const expro: Expro = {
+      nameC: this.nameC,
+      beginD: this.beginD,
+      endD: this.endD,
+      job: this.job
+    };
+    
+    this.cvService.addPro(expro).subscribe(
+        (data: any) => {
+            console.log('Infos enregistrées avec succès !', data);
+        },
+        (error: any) => {
+            console.log('Erreur lors de l\'enregistrement des infos : ', error);
+        }
+    );
+  }
 
+  submitFormSkills(): void {
+    if (!this.domains || !this.details) {
+        console.log('Veuillez entrer des données valides.');
+        return; 
+    }  
+    console.log('ok nous sommes passés');
+    const skills: Skills = {
+      domains: this.domains,
+      details: this.details
+    };
+    
+    this.cvService.addSkills(skills).subscribe(
+        (data: any) => {
+            console.log('Infos enregistrées avec succès !', data);
+        },
+        (error: any) => {
+            console.log('Erreur lors de l\'enregistrement des infos : ', error);
+        }
+    );
+  }
 
-  
+  submitFormCertif(): void {
+    if (!this.name || !this.domain) {
+        console.log('Veuillez entrer des données valides.');
+        return; 
+    }  
+    console.log('ok nous sommes passés');
+
+    const certif: Certif = {
+      name: this.name,
+      domain: this.domain
+    };
+    
+    this.cvService.addCertif(certif).subscribe(
+        (data: any) => {
+            console.log('Infos enregistrées avec succès !', data);
+        },
+        (error: any) => {
+            console.log('Erreur lors de l\'enregistrement des infos : ', error);
+        }
+    );
+  }
   
 }
+
 

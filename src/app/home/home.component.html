@@ -26,7 +26,7 @@
   <label class="label">Informations personnelles</label>
   <ul>
     <li *ngFor="let info of infos">
-      <!--{{ info.id }}--> - Nom : {{ info.surname }} <br> - Prenom - {{ info.name }} <br> - Date de Naissance {{ info.birth | date:'longDate' }}
+      {{ info.id }} - {{ info.surname }} - {{ info.name }} - {{ info.birth }}
     </li>
   </ul>
 </div>
@@ -35,7 +35,7 @@
   <label class="label">Diplômes</label>
   <ul>
     <li *ngFor="let diplome of diplomes">
-      <!--{{ diplome.id }}-->{{ diplome.name }} , {{ diplome.school }} , {{ diplome.obtentionDate | date:'longDate' }}
+      {{ diplome.id }} - {{ diplome.name }} - {{ diplome.school }} - {{ diplome.obtentionDate }}
     </li>
   </ul>
 </div>
@@ -44,7 +44,7 @@
   <label class="label">Expériences professionnelles </label>
   <ul>
     <li *ngFor="let experience of expro">
-      <!--{{ experience.id }}-->{{ experience.nameC }} - {{ experience.beginD | date:'longDate' }} - {{ experience.endD | date:'longDate' }} - {{ experience.job }}
+      {{ experience.id }} - {{ experience.nameC }} - {{ experience.beginD }} - {{ experience.endD }} - {{ experience.job }}
     </li>
   </ul>
 </div>
@@ -53,7 +53,7 @@
   <label class="label">Compétences techniques </label>
   <ul>
     <li *ngFor="let skill of skills">
-      <!--{{ skill.id }}-->{{ skill.domains }} : {{ skill.details }}
+      {{ skill.id }} - {{ skill.domains }} - {{ skill.details }}
     </li>
   </ul>
 </div>
@@ -62,22 +62,22 @@
   <label class="label">Certifications</label>
   <ul>
     <li *ngFor="let certif of certif">
-      <!--{{ certif.id }}-->{{ certif.name }} : {{ certif.domain }}
+      {{ certif.id }} - {{ certif.name }} - {{ certif.domain }}
     </li>
   </ul>
 </div>
 
 <div class="label-container">
-  <label class="label">Hobbies</label>
+  <label class="label">Certifications</label>
   <ul>
     <li *ngFor="let hobbie of hobbie">
-      <!--{{ hobbie.id }}-->{{ hobbie.description }}
+      {{ hobbie.id }} - {{ hobbie.description }}
     </li>
   </ul>
 </div>
 
 <div class="label-container">
-  <label class="label">Contact</label>
+  <label class="label">Certifications</label>
   <ul>
     <li *ngFor="let contact of contact">
       {{ contact.id }} - {{ contact.type }} - {{ contact.info }}
