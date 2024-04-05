@@ -1,0 +1,12 @@
+<div>
+  <title>Vous pouvez envoyer un message au propriétaire du CV</title>
+
+  <form (submit)="sendMessage()">
+      <input type="text" id="surname" name="surname" placeholder="Nom" required><br>
+      <input type="text" name="name" id="name" placeholder="Prénom" required><br>
+      <input type="text" name="contact" id="contact" placeholder="Un moyen de vous contacter" required><br>
+      <input type="textarea" name="messagebody" id="messagebody" placeholder="Votre message" required>
+      <input type="date" value="new Date();" name="date" id="date" hidden required><br>
+      <input type="submit" class="submit-button" value="ENVOYER">
+  </form>
+</div>
