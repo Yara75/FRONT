@@ -57,5 +57,5 @@ create table Message(
     name text not null ,
     contact text not null ,
     date date not null default now(),
-    messageBody text not null
+    messagebody text not null
 );

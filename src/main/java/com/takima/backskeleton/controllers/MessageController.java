@@ -15,7 +15,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @RequestMapping("Message")
 public class MessageController {
-    private MessageService messageService;
+    private final MessageService messageService;
 
     @GetMapping("")
     public List<Message> findAll() {return messageService.findAll();}
@@ -29,7 +29,7 @@ public class MessageController {
     public void deleteById(@PathVariable Long id) {messageService.deleteById(id);}
 
     @PostMapping("")
-    public void addMessage(@RequestBody Message messageTmp) {messageService.addMessage(messageTmp);}
+    public void addMessage(@RequestBody Message messageTmp) {System.out.println("\n"+messageTmp.getSurname()+"\n"+messageTmp.getName()+"\n"+messageTmp.getContact()+"\n"+messageTmp.getDate()+"\n"+messageTmp.getMessageBody()+"\n");messageService.addMessage(messageTmp);}
 
     @PostMapping("/{id}")
     public void updateById(@PathVariable Long id, @RequestBody Message messageTmp) {
