@@ -12,6 +12,7 @@ export class MessageService {
     constructor(private http: HttpClient) {}
 
     sendMessage(message: Message): Observable<any[]> {
+        console.log("Message Posting");
         return this.http.post<any[]>(this.baseUrl,message);
     }
 }
