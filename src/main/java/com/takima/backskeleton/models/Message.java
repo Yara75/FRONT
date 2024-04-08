@@ -23,7 +23,7 @@ public class Message {
     @Column(name = "date")
     private Date date;
     @Column(name = "messagebody")
-    private String messageBody;
+    private String messagebody;
 
     public Message(){
 

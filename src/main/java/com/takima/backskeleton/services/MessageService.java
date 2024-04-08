@@ -40,6 +40,6 @@ public class MessageService {
 
     @Transactional
     public void updateMessageById(Message messageTmp, Long id) {
-        messageDao.updateById(messageTmp.getSurname(), messageTmp.getName(), messageTmp.getContact(), messageTmp.getDate(), messageTmp.getMessageBody(), id);
+        messageDao.updateById(messageTmp.getSurname(), messageTmp.getName(), messageTmp.getContact(), messageTmp.getDate(), messageTmp.getMessagebody(), id);
     }
 }
