@@ -42,12 +42,3 @@ export interface Contact {
     type: string;
     info: string;
 }
-
-export interface Message {
-    id?: number;
-    surname: string;
-    name: string;
-    contact: string;
-    date: Date;
-    messagebody: string;
-}

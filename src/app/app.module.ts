@@ -17,8 +17,6 @@ import { MajorsComponent } from "./majors/majors.component";
 import { MajorStudentsComponent } from "./majors/major-students/major-students.component";
 import { HttpClientModule } from "@angular/common/http";
 import { CvComponent } from "./cv/cv.component"; // Ajoutez l'import pour CvComponent
-import { MessageFormComponent } from "./messageform/messageform.component";
-
 
 @NgModule({
   declarations: [
@@ -30,7 +28,6 @@ import { MessageFormComponent } from "./messageform/messageform.component";
     MajorsComponent,
     MajorStudentsComponent,
     CvComponent, // Ajoutez CvComponent ici
-    MessageFormComponent,
   ],
   imports: [
     BrowserModule,
