@@ -1,0 +1,36 @@
+<p>Test!</p>
+<!-- cv.component.html -->
+<form (ngSubmit)="submitForm()">
+    <div>
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" [(ngModel)]="nom" name="nom" required>
+    </div>
+  
+    <div>
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" [(ngModel)]="prenom" name="prenom" required>
+    </div>
+  
+    <div>
+      <label for="age">Âge :</label>
+      <input type="number" id="age" [(ngModel)]="age" name="age" required>
+    </div>
+  
+    <div>
+      <label for="adresse">Adresse :</label>
+      <input type="text" id="adresse" [(ngModel)]="adresse" name="adresse" required>
+    </div>
+  
+    <div>
+      <label for="courriel">Courriel :</label>
+      <input type="email" id="courriel" [(ngModel)]="courriel" name="courriel" required>
+    </div>
+  
+    <div>
+      <label for="poste">Poste :</label>
+      <input type="text" id="poste" [(ngModel)]="poste" name="poste" required>
+    </div>
+  
+    <button type="submit">Soumettre</button>
+  </form>
+  
