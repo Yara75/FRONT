@@ -41,6 +41,9 @@ public class PersonalInfoService {
     }
 
     @Transactional
+    public void deleteAll() {personalInfoDao.deleteAll();}
+
+    @Transactional
     public void updatePersonalInfo(PersonalInfo personalInfoTmp, Long id) {
         personalInfoDao.updateInfo(personalInfoTmp.getSurname(), personalInfoTmp.getName(), personalInfoTmp.getBirth(), id);
     }

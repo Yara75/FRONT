@@ -28,6 +28,9 @@ public class MessageController {
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id) {messageService.deleteById(id);}
 
+    @DeleteMapping("")
+    public void deleteAll() {messageService.deleteAll();}
+
     @PostMapping("")
     public void addMessage(@RequestBody Message messageTmp) {messageService.addMessage(messageTmp);}
 

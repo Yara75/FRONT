@@ -38,4 +38,7 @@ public class DiplomaController {
     public void deleteDiplomaById(@PathVariable Long id) {
         diplomaService.deleteById(id);
     }
+
+    @DeleteMapping("")
+    public void deleteAll(){diplomaService.deleteAll();}
 }

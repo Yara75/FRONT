@@ -1,9 +1,6 @@
 package com.takima.backskeleton.controllers;
 
-import com.takima.backskeleton.DAO.SkillsDao;
-import com.takima.backskeleton.models.PersonalInfo;
 import com.takima.backskeleton.models.Skills;
-import com.takima.backskeleton.services.PersonalInfoService;
 import com.takima.backskeleton.services.SkillsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -16,21 +13,23 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 public class SkillsController {
-    private final SkillsService SkillsService;
+    private final SkillsService skillsService;
 
     @GetMapping("")
     public List<Skills> getSkills(){
-        return SkillsService.getAll();
+        return skillsService.getAll();
     }
 
     @GetMapping("/{id}")
     public Optional<Skills> getSkillsById(@PathVariable Long id) {
-        return SkillsService.getSkillsById(id);
+        return skillsService.getSkillsById(id);
     }
 
     @PostMapping("")
     public void addSkills(@RequestBody Skills Skills) {
-        SkillsService.addInfo(Skills);
+        skillsService.addInfo(Skills);
     }
 
+    @DeleteMapping("")
+    public void deleteAll(){skillsService.deleteAll();}
 }

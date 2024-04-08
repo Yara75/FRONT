@@ -34,6 +34,9 @@ public class MessageService {
     }
 
     @Transactional
+    public void deleteAll(){messageDao.deleteAll();}
+
+    @Transactional
     public void addMessage(Message messageTmp) {
         messageDao.save(messageTmp);
     }

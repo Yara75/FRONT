@@ -34,6 +34,9 @@ public class HobbieService {
     }
 
     @Transactional
+    public void deleteAll(){hobbieDao.deleteAll();}
+
+    @Transactional
     public void addHobbie(Hobbie hobbieTmp) {
         hobbieDao.save(hobbieTmp);
     }

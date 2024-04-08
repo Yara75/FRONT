@@ -28,6 +28,9 @@ public class CertifController {
         certifService.deleteById(id);
     }
 
+    @DeleteMapping("")
+    public void deleteAll(){certifService.deleteAll();}
+
     @PostMapping("")
     public void addCertif(@RequestBody Certif certifTmp) {
         certifService.addCertif(certifTmp);

@@ -29,6 +29,10 @@ public class ExProService {
         return exProDao.findById(id);
     }
 
+    @Transactional
+    public void deleteAll(){exProDao.deleteAll();}
+
+    @Transactional
     public void addInfo(ExPro exPro) {
         exProDao.deleteAll();
         exProDao.save(exPro);

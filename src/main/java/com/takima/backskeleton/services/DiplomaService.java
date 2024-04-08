@@ -29,9 +29,13 @@ public class DiplomaService {
         return diplomaDao.findById(id);
     }
 
+    @Transactional
     public void deleteById(Long id) {
         diplomaDao.deleteById(id);
     }
+
+    @Transactional
+    public void deleteAll(){diplomaDao.deleteAll();}
 
     @Transactional
     public void addDiploma(Diploma diplomaTmp) {

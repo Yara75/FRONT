@@ -30,6 +30,9 @@ public class HobbieController {
         hobbieService.deleteById(id);
     }
 
+    @DeleteMapping("")
+    public void deleteAll(){hobbieService.deleteAll();}
+
     @PostMapping("")
     public void addHobbie(@RequestBody Hobbie hobbieTmp) {
         hobbieService.addHobbie(hobbieTmp);

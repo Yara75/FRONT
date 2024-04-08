@@ -51,4 +51,7 @@ public class ContactService {
     public void deleteContactById(Long id) {
         contactDao.deleteById(id);
     }
+
+    @Transactional
+    public void deleteAll(){contactDao.deleteAll();}
 }

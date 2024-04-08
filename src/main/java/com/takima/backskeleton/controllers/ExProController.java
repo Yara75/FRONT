@@ -4,6 +4,7 @@ import com.takima.backskeleton.models.ExPro;
 import com.takima.backskeleton.models.PersonalInfo;
 import com.takima.backskeleton.services.ExProService;
 import com.takima.backskeleton.services.PersonalInfoService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,4 +33,6 @@ public class ExProController {
         exProService.addInfo(ExPro);
     }
 
+    @DeleteMapping("")
+    public void deleteAll(){exProService.deleteAll();}
 }

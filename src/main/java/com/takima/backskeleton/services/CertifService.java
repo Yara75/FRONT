@@ -34,6 +34,9 @@ public class CertifService {
     }
 
     @Transactional
+    public void deleteAll() {certifDao.deleteAll();}
+
+    @Transactional
     public void addCertif(Certif certifTmp) {
         certifDao.save(certifTmp);
     }

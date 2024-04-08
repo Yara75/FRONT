@@ -35,6 +35,9 @@ public class PersonalInfoController {
         personalInfoService.deletePersonalInfoById(id);
     }
 
+    @DeleteMapping("")
+    public void deleteAll(){personalInfoService.deleteAll();}
+
     @PostMapping("/{id}")
     public void updatePersonalInfo(@RequestBody PersonalInfo personalInfo, @PathVariable Long id) {
         personalInfoService.addInfo(personalInfo);
