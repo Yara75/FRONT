@@ -12,6 +12,8 @@ import { MajorStudentsResolver } from "majors/major-students/major-students.reso
 import { MajorStudentsComponent } from "majors/major-students/major-students.component";
 import { CvComponent } from "./cv/cv.component"; // Ajoutez l'import pour CvComponent
 import { MessageFormComponent } from "messageform/messageform.component";
+import { modificationComponent } from "./modification/modification.component";
+
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -47,6 +49,10 @@ const routes: Routes = [
   {
     path: "messageform",
     component: MessageFormComponent,
+  },
+  {
+    path: "modification",
+    component: modificationComponent,
   },
 ];
 
