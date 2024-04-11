@@ -16,11 +16,8 @@ import { MajorStudentsComponent } from "./majors/major-students/major-students.c
 import { HttpClientModule } from "@angular/common/http";
 import { CvComponent } from "./cv/cv.component"; // Ajoutez l'import pour CvComponent
 import { MessageFormComponent } from "messageform/messageform.component";
-<<<<<<< Updated upstream
 import { modificationComponent } from "modification/modification.component";
-=======
 import { InboxComponent } from "inbox/inbox.component";
->>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -31,11 +28,9 @@ import { InboxComponent } from "inbox/inbox.component";
     MajorStudentsComponent,
     CvComponent, // Ajoutez CvComponent ici
     MessageFormComponent,
-<<<<<<< Updated upstream
     modificationComponent,
-=======
-    InboxComponent
->>>>>>> Stashed changes
+    InboxComponent,
+    Stashed changes
   ],
   imports: [
     BrowserModule,
