@@ -26,7 +26,7 @@
   <label class="label">Informations personnelles</label>
   <ul>
     <li *ngFor="let info of infos">
-      {{ info.id }} - {{ info.surname }} - {{ info.name }} - {{ info.birth }}
+      {{ info.surname }} - {{ info.name }} - {{ info.birth }}
     </li>
   </ul>
 </div>
@@ -35,7 +35,7 @@
   <label class="label">Diplômes</label>
   <ul>
     <li *ngFor="let diplome of diplomes">
-      {{ diplome.id }} - {{ diplome.name }} - {{ diplome.school }} - {{ diplome.obtentionDate | date:'longDate' }}
+      {{ diplome.name }} - {{ diplome.school }} - {{ diplome.obtentionDate | date:'longDate' }}
     </li>
   </ul>
 </div>
@@ -44,7 +44,7 @@
   <label class="label">Expériences professionnelles </label>
   <ul>
     <li *ngFor="let experience of expro">
-      {{ experience.id }} - {{ experience.nameC }} - {{ experience.beginD | date:'longDate' }} - {{ experience.endD | date:'longDate' }} - {{ experience.job }}
+      {{ experience.nameC }} - {{ experience.beginD | date:'longDate' }} - {{ experience.endD | date:'longDate' }} - {{ experience.job }}
     </li>
   </ul>
 </div>
@@ -53,7 +53,7 @@
   <label class="label">Compétences techniques </label>
   <ul>
     <li *ngFor="let skill of skills">
-      {{ skill.id }} - {{ skill.domains }} - {{ skill.details }}
+      {{ skill.domains }} - {{ skill.details }}
     </li>
   </ul>
 </div>
@@ -62,7 +62,7 @@
   <label class="label">Certifications</label>
   <ul>
     <li *ngFor="let certif of certif">
-      {{ certif.id }} - {{ certif.name }} - {{ certif.domain }}
+      {{ certif.name }} - {{ certif.domain }}
     </li>
   </ul>
 </div>
@@ -71,7 +71,7 @@
   <label class="label">Centres d'intérêt</label>
   <ul>
     <li *ngFor="let hobbie of hobbie">
-      {{ hobbie.id }} - {{ hobbie.description }}
+      {{ hobbie.description }}
     </li>
   </ul>
 </div>
@@ -80,7 +80,7 @@
   <label class="label">Contact</label>
   <ul>
     <li *ngFor="let contact of contact">
-      {{ contact.id }} - {{ contact.type }} - {{ contact.info }}
+      {{ contact.type }} - {{ contact.info }}
     </li>
   </ul>
 </div>
