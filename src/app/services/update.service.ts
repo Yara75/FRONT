@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Diploma, Expro, Infos, PersonalInfo } from '../models/infos.model';
-import { Certif, Skills, Hobbie, Contact } from 'models/home.model';
+import { Certif, Skills, Hobbie, Contact, ExPro } from 'models/home.model';
 
 @Injectable({
   providedIn: 'root'
@@ -61,7 +61,37 @@ export class CvService {
     const numericId: number = Number(id); 
     return this.http.post<any>(`http://localhost:8080/Diploma/${numericId}`, diplome);
   }
-  
+ 
+  //Ajouter le update by id dans le BACK 
+  updateExProById(expro: ExPro, id: number): Observable<any> {
+    console.log('Appel de la méthode updateDiploma() avec les informations:', expro);
+    console.log(id);
+    const numericId: number = Number(id); 
+    return this.http.post<any>(`http://localhost:8080/ExPro/${numericId}`, expro);
+  }
+
+//Ajouter le update by id dans le BACK 
+  updateSkillsById(skills: Skills, id: number): Observable<any> {
+    console.log('Appel de la méthode updateDiploma() avec les informations:', skills);
+    console.log(id);
+    const numericId: number = Number(id); 
+    return this.http.post<any>(`http://localhost:8080/Skills/${numericId}`, skills);
+  }
+
+  //Ajouter le update by id dans le BACK 
+  updateCertifById(certif: Certif, id: number): Observable<any> {
+    console.log('Appel de la méthode updateDiploma() avec les informations:', certif);
+    console.log(id);
+    const numericId: number = Number(id); 
+    return this.http.post<any>(`http://localhost:8080/Certif/${numericId}`, certif);
+  }
+
+  updateHobbie(hobbie: Hobbie, id: number): Observable<any> {
+    console.log('Appel de la méthode updateDiploma() avec les informations:', hobbie);
+    console.log(id);
+    const numericId: number = Number(id); 
+    return this.http.post<any>(`http://localhost:8080/Hobbie/${numericId}`, hobbie);
+  }
 
 }
 

@@ -8,7 +8,7 @@ import { Skills } from '../models/home.model';
 import { Certif } from '../models/home.model';
 import { Hobbie } from '../models/home.model';
 import { Contact } from '../models/home.model';
-import {PersonalInfo, Diploma } from '../models/infos.model';
+import {PersonalInfo, Diploma, Expro } from '../models/infos.model';
 
 @Component({
   selector: "update",
@@ -188,6 +188,96 @@ export class UpdateComponent implements OnInit {
         }
     );
   }
+
+  updateFormExPro(): void {
+    if (!this.nameC || !this.beginD  || !this.endD || !this.job || !this.id) {
+        console.log('[UPDATE] Veuillez entrer des données valides');
+        return; 
+    }  
+    console.log('ok nous sommes passés');
+
+    const expro: Expro = {
+      nameC: this.nameC,
+      beginD: this.beginD,
+      endD: this.endD,
+      job: this.job
+    };
+    
+    this.cvService.updateExProById(expro, this.id).subscribe(
+        (data: any) => {
+            console.log('Infos enregistrées avec succès !', data);
+        },
+        (error: any) => {
+            console.log('Erreur lors de l\'enregistrement des infos : ', error);
+        }
+    );
+  }
+
+  updateFormSkills(): void {
+    if (!this.domains || !this.details  || !this.id) {
+        console.log('[UPDATE] Veuillez entrer des données valides');
+        return; 
+    }  
+    console.log('ok nous sommes passés');
+
+    const skills: Skills = {
+      domains: this.domains,
+      details: this.details
+    };
+    
+    this.cvService.updateSkillsById(skills, this.id).subscribe(
+        (data: any) => {
+            console.log('Infos enregistrées avec succès !', data);
+        },
+        (error: any) => {
+            console.log('Erreur lors de l\'enregistrement des infos : ', error);
+        }
+    );
+  }
+
+  updateFormCertif(): void {
+    if (!this.name || !this.domain  || !this.id) {
+        console.log('[UPDATE] Veuillez entrer des données valides');
+        return; 
+    }  
+    console.log('ok nous sommes passés');
+
+    const certif: Certif = {
+      name: this.name,
+      domain: this.domain
+    };
+    
+    this.cvService.updateCertifById(certif, this.id).subscribe(
+        (data: any) => {
+            console.log('Infos enregistrées avec succès !', data);
+        },
+        (error: any) => {
+            console.log('Erreur lors de l\'enregistrement des infos : ', error);
+        }
+    );
+  }
+
+  updateFormHobbie(): void {
+    if (!this.description || !this.id) {
+        console.log('[UPDATE] Veuillez entrer des données valides');
+        return; 
+    }  
+    console.log('ok nous sommes passés');
+
+    const hobbie: Hobbie = {
+      description: this.description
+    };
+    
+    this.cvService.updateHobbie(hobbie, this.id).subscribe(
+        (data: any) => {
+            console.log('Infos enregistrées avec succès !', data);
+        },
+        (error: any) => {
+            console.log('Erreur lors de l\'enregistrement des infos : ', error);
+        }
+    );
+  }
+  
 }
 
 
