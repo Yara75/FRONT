@@ -25,7 +25,6 @@ public class SkillsService {
 
     @Transactional
     public void addInfo(Skills Skills){
-        skillsDao.deleteAll();
         skillsDao.save(Skills);
     }
 

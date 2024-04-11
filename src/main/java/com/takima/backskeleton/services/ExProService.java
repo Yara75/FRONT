@@ -34,7 +34,6 @@ public class ExProService {
 
     @Transactional
     public void addInfo(ExPro exPro) {
-        exProDao.deleteAll();
         exProDao.save(exPro);
     }
 }
