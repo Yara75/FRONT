@@ -1,0 +1,10 @@
+<span *ngFor="let message of messages">
+    <div class="label-container">
+        <button (click)="message.id !== undefined && deleteMessageById(message.id)">Supprimer</button><br>
+        <label for="name">Prénom : </label><span name="name">{{message.name}}</span><br>
+        <label for="suurname">Nom : </label><span name="surname">{{message.surname}}</span><br>
+        <label for="contact">Contact : </label><span name="contact">{{message.contact}}</span><br>
+        <label for="date">Date d'envoie : </label><span name="date">{{message.date}}</span><br>
+        <label for="body">Message :</label><br><p name="body">{{message.messagebody}}</p>
+    </div>
+</span>

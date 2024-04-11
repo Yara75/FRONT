@@ -25,6 +25,7 @@ mat-nav-list {
   margin-left: 50px;
   display: flex;
   flex-direction: row;
+  overflow: visible;
   width: 400px;
 
   span,
@@ -32,6 +33,8 @@ mat-nav-list {
     font-size: large;
     color: theme.$white;
     transition: 0.3s;
+    white-space: nowrap; 
+    overflow: visible;
 
     &:hover {
       transform: scale(1.2);

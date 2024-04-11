@@ -9,7 +9,8 @@ import { MajorStudentsComponent } from "majors/major-students/major-students.com
 import { CvComponent } from "./cv/cv.component"; // Ajoutez l'import pour CvComponent
 import { MessageFormComponent } from "messageform/messageform.component";
 import { modificationComponent } from "./modification/modification.component";
-
+import { InboxComponent } from "inbox/inbox.component";
+import { UpdateComponent } from "./update/update.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -38,6 +39,14 @@ const routes: Routes = [
   {
     path: "modification",
     component: modificationComponent,
+  },
+  {
+    path: "inbox",
+    component: InboxComponent,
+  },
+  {
+    path: "update",
+    component: UpdateComponent,
   },
 ];
 

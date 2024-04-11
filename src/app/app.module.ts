@@ -17,6 +17,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { CvComponent } from "./cv/cv.component"; // Ajoutez l'import pour CvComponent
 import { MessageFormComponent } from "messageform/messageform.component";
 import { modificationComponent } from "modification/modification.component";
+import { InboxComponent } from "inbox/inbox.component";
+import { UpdateComponent } from "./update/update.component";
 
 @NgModule({
   declarations: [
@@ -25,8 +27,10 @@ import { modificationComponent } from "modification/modification.component";
     HomeComponent,
     MajorsComponent,
     MajorStudentsComponent,
-    CvComponent, // Ajoutez CvComponent ici
-    MessageFormComponent,
+    CvComponent, 
+    MessageFormComponent, 
+    UpdateComponent,
+    InboxComponent,
     modificationComponent,
   ],
   imports: [
