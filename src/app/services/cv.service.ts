@@ -25,7 +25,7 @@ export class CvService {
 
   addDiploma(diplomes : Diploma): Observable<any>{
     console.log('Appel de la méthode addDiploma() avec les informations:', diplomes);
-    return this.http.post<any>('http://localhost:8080/Diploma/enregistrer', diplomes);
+    return this.http.post<any>('http://localhost:8080/Diploma', diplomes);
   }  
 
   addPro(expro : Expro): Observable<any>{
