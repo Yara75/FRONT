@@ -8,6 +8,7 @@ import { Diploma, Expro, Skills, Certif, Hobbie } from '../models/infos.model';
   templateUrl: './cv.component.html',
   styleUrls: ['./cv.component.scss']
 })
+
 export class CvComponent implements OnInit {
 
   nom: string = '';

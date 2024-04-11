@@ -10,6 +10,7 @@ import { CvComponent } from "./cv/cv.component"; // Ajoutez l'import pour CvComp
 import { MessageFormComponent } from "messageform/messageform.component";
 import { modificationComponent } from "./modification/modification.component";
 import { InboxComponent } from "inbox/inbox.component";
+import { UpdateComponent } from "./update/update.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: "inbox",
     component: InboxComponent,
+  },
+  {
+    path: "update",
+    component: UpdateComponent,
   },
 ];
 
