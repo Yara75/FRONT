@@ -1,11 +1,10 @@
 <div>
-  <title>Vous pouvez envoyer un message au propriétaire du CV</title>
-
+  <h2>Vous pouvez envoyer un message au propriétaire du CV</h2>
   <form (submit)="sendMessage()">
       <input type="text" [(ngModel)]="surname" id="surname" name="surname" placeholder="Nom" required><br>
       <input type="text" [(ngModel)]="name" name="name" id="name" placeholder="Prénom" required><br>
       <input type="text" [(ngModel)]="contact" name="contact" id="contact" placeholder="Un moyen de vous contacter" required><br>
-      <input type="text" [(ngModel)]="messagebody" name="messagebody" id="messagebody" placeholder="Votre message" required>
+      <textarea type="text" [(ngModel)]="messagebody" name="messagebody" id="messagebody" placeholder="Votre message" required></textarea>
       <input type="date" [(ngModel)]="date" value="new Date();" name="date" id="date" hidden required><br>
       <input type="submit" class="submit-button" value="ENVOYER">
   </form>
