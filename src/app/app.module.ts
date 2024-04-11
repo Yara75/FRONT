@@ -30,7 +30,6 @@ import { InboxComponent } from "inbox/inbox.component";
     MessageFormComponent,
     modificationComponent,
     InboxComponent,
-    Stashed changes
   ],
   imports: [
     BrowserModule,
