@@ -8,8 +8,12 @@ import { MajorStudentsResolver } from "majors/major-students/major-students.reso
 import { MajorStudentsComponent } from "majors/major-students/major-students.component";
 import { CvComponent } from "./cv/cv.component"; // Ajoutez l'import pour CvComponent
 import { MessageFormComponent } from "messageform/messageform.component";
+<<<<<<< Updated upstream
 import { modificationComponent } from "./modification/modification.component";
 
+=======
+import { InboxComponent } from "inbox/inbox.component";
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -36,9 +40,15 @@ const routes: Routes = [
     component: MessageFormComponent,
   },
   {
+<<<<<<< Updated upstream
     path: "modification",
     component: modificationComponent,
   },
+=======
+    path: "inbox",
+    component: InboxComponent,
+  }
+>>>>>>> Stashed changes
 ];
 
 @NgModule({

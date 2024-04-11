@@ -15,4 +15,14 @@ export class MessageService {
         console.log("Message Posting");
         return this.http.post<any[]>(this.baseUrl,message);
     }
+
+    getMessages(): Observable<any[]> {
+        console.log("Getting Messages");
+        return this.http.get<any[]>(this.baseUrl)
+    }
+
+    deleteMessageById(id:number): Observable<any[]> {
+        console.log("Deleting message : "+id);
+        return this.http.delete<any[]>(this.baseUrl+"/"+(id));
+    }
 }
