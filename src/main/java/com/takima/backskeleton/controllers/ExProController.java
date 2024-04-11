@@ -35,4 +35,7 @@ public class ExProController {
 
     @DeleteMapping("")
     public void deleteAll(){exProService.deleteAll();}
+
+    @DeleteMapping("/{id}")
+    public void deleteExProById(@PathVariable long id){exProService.deleteById(id);}
 }

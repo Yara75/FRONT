@@ -35,4 +35,8 @@ public class SkillsService {
 
     @Transactional
     public void deleteAll(){skillsDao.deleteAll();}
+
+    @Transactional
+    public void deleteById(long id){skillsDao.deleteById(id);}
+
 }

@@ -2,7 +2,6 @@ package com.takima.backskeleton.services;
 
 import com.takima.backskeleton.DAO.ExProDao;
 import com.takima.backskeleton.models.ExPro;
-import com.takima.backskeleton.models.PersonalInfo;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -36,4 +35,7 @@ public class ExProService {
     public void addInfo(ExPro exPro) {
         exProDao.save(exPro);
     }
+
+    @Transactional
+    public void deleteById(long id){exProDao.deleteById(id);}
 }
