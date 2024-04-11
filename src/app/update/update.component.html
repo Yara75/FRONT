@@ -8,8 +8,7 @@
       border: 1px solid #000;
       padding: 10px; 
       display: inline-block;
-      width: 1700px; 
-      height: 150px;
+      width: 1000px;
       box-sizing: border-box;
       margin-left: 10px; 
       margin-bottom: 20px; 
@@ -23,7 +22,7 @@
     <label class="label">Informations personnelles</label>
     <ul>
       <li *ngFor="let info of infos">
-        {{ info.id }} - {{ info.surname }} - {{ info.name }} - {{ info.birth }}
+        {{ info.id }} - {{ info.surname }} - {{ info.name }} - {{ info.birth | date:'longDate' }}
       </li>
     </ul>
     <label for="prenom">ID :</label>
@@ -31,7 +30,7 @@
  
     <label for="prenom">Nom de famille:</label>
     <input type="text" id="surname" [(ngModel)]="surname" name="surname" placeholder="Nom de famille">
-
+    <br>
     <label for="prenom">prenom:</label>
     <input type="text" id="name"  [(ngModel)]="name" name="name" placeholder="prénom">
 
@@ -55,7 +54,7 @@
 
     <label for="prenom">Nom du diplome:</label>
     <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="Entrez le diplome">
-    
+    <br>
     <label for="prenom">Nom de l'établissement:</label>
     <input type="text" id="prenom" [(ngModel)]="school" name="prenom" placeholder="Entrez l'établissemnt">
     
@@ -69,7 +68,7 @@
     <label class="label">Expériences professionnelles </label>
     <ul>
       <li *ngFor="let experience of expro">
-        {{ experience.id }} - {{ experience.nameC }} - {{ experience.beginD }} - {{ experience.endD }} - {{ experience.job }}
+        {{ experience.id }} - {{ experience.nameC }} - {{ experience.beginD | date:'longDate' }} - {{ experience.endD | date:'longDate' }} - {{ experience.job }}
       </li>
     </ul>
   </div>
