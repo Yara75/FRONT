@@ -18,6 +18,7 @@ import { CvComponent } from "./cv/cv.component"; // Ajoutez l'import pour CvComp
 import { MessageFormComponent } from "messageform/messageform.component";
 import { modificationComponent } from "modification/modification.component";
 import { InboxComponent } from "inbox/inbox.component";
+import { UpdateComponent } from "./update/update.component";
 
 @NgModule({
   declarations: [
@@ -26,10 +27,11 @@ import { InboxComponent } from "inbox/inbox.component";
     HomeComponent,
     MajorsComponent,
     MajorStudentsComponent,
-    CvComponent, // Ajoutez CvComponent ici
-    MessageFormComponent,
-    modificationComponent,
+    CvComponent, 
+    MessageFormComponent, 
+    UpdateComponent,
     InboxComponent,
+    modificationComponent,
   ],
   imports: [
     BrowserModule,

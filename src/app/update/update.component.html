@@ -1,0 +1,114 @@
+<style>
+    .label-container label {
+      text-align: left;
+      margin-bottom: 20px; 
+    }
+    .label-container {
+      font-size: 20px; 
+      border: 1px solid #000;
+      padding: 10px; 
+      display: inline-block;
+      width: 1700px; 
+      height: 150px;
+      box-sizing: border-box;
+      margin-left: 10px; 
+      margin-bottom: 20px; 
+    }
+  </style>
+  
+  <span class="title">Modifier votre CV !</span>
+  
+<form (submit)="updateFormPersonalinfo()">
+  <div class="label-container">
+    <label class="label">Informations personnelles</label>
+    <ul>
+      <li *ngFor="let info of infos">
+        {{ info.id }} - {{ info.surname }} - {{ info.name }} - {{ info.birth }}
+      </li>
+    </ul>
+    <label for="prenom">ID :</label>
+    <input type="number" id="id" [(ngModel)]="id" name="id" placeholder="id">
+ 
+    <label for="prenom">Nom de famille:</label>
+    <input type="text" id="surname" [(ngModel)]="surname" name="surname" placeholder="Nom de famille">
+
+    <label for="prenom">prenom:</label>
+    <input type="text" id="name"  [(ngModel)]="name" name="name" placeholder="prénom">
+
+    <label for="prenom">Date de naissance:</label>
+    <input type="date" id="birth" [(ngModel)]="birth" name="birth" placeholder="Date de naissance">
+    <button class="submit-button" type="submit">Modifier</button>
+  </div>
+</form>
+  
+<form (submit)="updateFormDiploma()">
+  <div class="label-container">
+    <label class="label">Diplômes</label>
+    <ul>
+      <li *ngFor="let diplome of diplomes">
+        {{ diplome.id }} - {{ diplome.name }} - {{ diplome.school }} - {{ diplome.obtentionDate }}
+      </li>
+    </ul>
+
+    <label for="prenom">ID :</label>
+    <input type="number" id="id" [(ngModel)]="id" name="id" placeholder="id">
+
+    <label for="prenom">Nom du diplome:</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="Entrez le diplome">
+    
+    <label for="prenom">Nom de l'établissement:</label>
+    <input type="text" id="prenom" [(ngModel)]="school" name="prenom" placeholder="Entrez l'établissemnt">
+    
+    <label for="nom">Année d'obtention:</label>
+    <input type="date" id="nom" [(ngModel)]="obtentionDate" name="nom" placeholder="Entrez la DD">
+    <button class="submit-button" type="submit">Modifier</button>
+  </div>
+</form>
+
+  <div class="label-container">
+    <label class="label">Expériences professionnelles </label>
+    <ul>
+      <li *ngFor="let experience of expro">
+        {{ experience.id }} - {{ experience.nameC }} - {{ experience.beginD }} - {{ experience.endD }} - {{ experience.job }}
+      </li>
+    </ul>
+  </div>
+  
+  <div class="label-container">
+    <label class="label">Compétences techniques </label>
+    <ul>
+      <li *ngFor="let skill of skills">
+        {{ skill.id }} - {{ skill.domains }} - {{ skill.details }}
+      </li>
+    </ul>
+  </div>
+  
+  <div class="label-container">
+    <label class="label">Certifications</label>
+    <ul>
+      <li *ngFor="let certif of certif">
+        {{ certif.id }} - {{ certif.name }} - {{ certif.domain }}
+      </li>
+    </ul>
+  </div>
+  
+  <div class="label-container">
+    <label class="label">Centres d'intérêt</label>
+    <ul>
+      <li *ngFor="let hobbie of hobbie">
+        {{ hobbie.id }} - {{ hobbie.description }}
+      </li>
+    </ul>
+  </div>
+  
+  <div class="label-container">
+    <label class="label">Contact</label>
+    <ul>
+      <li *ngFor="let contact of contact">
+        {{ contact.id }} - {{ contact.type }} - {{ contact.info }}
+      </li>
+    </ul>
+  </div>
+  
+  
+  
