@@ -4,6 +4,17 @@
       margin-bottom: 20px;
       margin-left: 10px;  
     }
+    .title-container {
+    border: 2px solid #333;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 3em;
+    color: #333;
+    margin: 0;
+  }
     .label-container {
       font-size: 20px; 
       border: 1px solid #000;
@@ -15,9 +26,12 @@
       margin-bottom: 20px; 
     }
   </style>
-  
-  <span class="title">Modifier votre CV !</span>
-  
+ <div class="container">
+  <div class="title-container">
+    <h1 class="title">La page de modification</h1>
+  </div>
+</div>
+<h1> </h1>
 <form (submit)="updateFormPersonalinfo()">
   <div class="label-container">
     <label class="label">Informations personnelles</label>
@@ -174,6 +188,7 @@
     <input type="text" id="info" [(ngModel)]="info" name="info" placeholder="entrez le contact">
     <button class="submit-button" type="submit">Modifier</button>
   </div>
+
   
   
   

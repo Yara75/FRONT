@@ -1,19 +1,44 @@
-
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page de saisie</title>
 <style>
+  
+  .body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  .title-container {
+    border: 2px solid #333;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 3em;
+    color: #333;
+    margin: 0;
+  }
+
+  .label-container {
+    font-size: 17px;
+    border: 1px solid #000;
+    padding: 20px;
+    width: 700px;
+    margin: 0 auto 20px auto;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: block;
+  }
+
   .label-container label {
     text-align: left;
-    margin-bottom: 10px; 
-  }
-  .label-container {
-    font-size: 17px; 
-    border: 1px solid #000;
-    padding: 10px; 
-    display: inline-block;
-    width: 700px; 
-    height: auto;
-    box-sizing: border-box;
-    margin-bottom: 20px; 
+    margin-bottom: 10px;
+    display: block;
   }
 
   .round-div {
@@ -23,10 +48,10 @@
   overflow: hidden; 
 }
 
-.round-div img {
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
+  .round-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .submit-button {
@@ -39,20 +64,23 @@
   }
 
 </style>
+</head>
+<body>
+  <br>
+  <div class="container">
+    <div class="title-container">
+      <h1 class="title">La page de saisie</h1>
+    </div>
+  </div>
 
-
-
-<h2>Infos</h2>
+<div class="round-div">
+  <img src="assets/personne.jpg" alt="Photo de profil">
+</div>
 <ul>
   <li *ngFor="let info of infos">
     {{ info.id }} - {{ info.nom }} - {{ info.prenom }}
   </li>
 </ul>
-
-<div class="round-div">
-  <img src="assets/personne.jpg" alt="Photo de profil">
-</div>
-
 <form (submit)="submitFormPersonalinfo()">
   <div class="label-container">
   <label for="prenom">Nom de famille:</label>
@@ -66,6 +94,7 @@
   <button class="submit-button" type="submit">Enregistrer</button>
   </div>
 </form>
+
 
 <form (submit)="submitForm()">
   <div class="label-container">
@@ -141,5 +170,7 @@
   </div>
 </form>
 
+</body>
+</html>
 
 
