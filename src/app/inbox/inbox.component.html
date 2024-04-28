@@ -1,9 +1,11 @@
-<span class="title">Inbox</span>
+<div class="title-container">
+    <span class="title">Boîte de réception</span>
+</div>
 <br>
 <div class="label-container">
     <span *ngFor="let message of messages">
         <div class="label-container">
-            <button (click)="message.id !== undefined && deleteMessageById(message.id)">Supprimer</button><br>
+            <button class="delete-button" (click)="message.id !== undefined && deleteMessageById(message.id)">Supprimer</button><br>
             <label for="name">Prénom : </label><span name="name">{{message.name}}</span><br>
             <label for="suurname">Nom : </label><span name="surname">{{message.surname}}</span><br>
             <label for="contact">Contact : </label><span name="contact">{{message.contact}}</span><br>
