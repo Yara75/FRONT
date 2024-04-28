@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
   constructor(private cvService: CvService) {} 
 
   ngOnInit(): void {
+     // Appel des méthodes pour charger les données lors de l'initialisation du composant
      this.loadInfos();
      this.loadDiplomes();
      this.loadExPro();
@@ -45,7 +46,7 @@ export class HomeComponent implements OnInit {
         this.infos = data;
       },
       (error: any) => {
-        console.log(error);
+        console.log(error,'Erreur d\affichage');
       }
     );
   }
@@ -57,7 +58,7 @@ export class HomeComponent implements OnInit {
         this.diplomes = data;
       },
       (error: any) => {
-        console.log(error);
+        console.log(error,'Erreur d\affichage');
       }
     );
   }
@@ -69,7 +70,7 @@ export class HomeComponent implements OnInit {
         this.expro = data;
       },
       (error: any) => {
-        console.log(error);
+        console.log(error,'Erreur d\affichage');
       }
     );
   }
@@ -81,7 +82,7 @@ export class HomeComponent implements OnInit {
         this.skills = data;
       },
       (error: any) => {
-        console.log(error);
+        console.log(error,'Erreur d\affichage');
       }
     );
   }
@@ -93,7 +94,7 @@ export class HomeComponent implements OnInit {
         this.certif = data;
       },
       (error: any) => {
-        console.log(error);
+        console.log(error,'Erreur d\affichage');
       }
     );
   }
@@ -105,7 +106,7 @@ export class HomeComponent implements OnInit {
         this.hobbie = data;
       },
       (error: any) => {
-        console.log(error);
+        console.log(error,'Erreur d\affichage');
       }
     );
   }
@@ -117,7 +118,7 @@ export class HomeComponent implements OnInit {
         this.contact = data;
       },
       (error: any) => {
-        console.log(error);
+        console.log(error,'Erreur d\affichage');
       }
     );
   }

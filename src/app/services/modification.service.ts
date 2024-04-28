@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Infos } from '../models/modification.model';
+import { Infos } from '../models/modification.model'; // Import du modèle Infos
 
 @Injectable({
   providedIn: 'root'
 })
 export class CvService {
 
+  // Déclaration des URLs de base pour les différentes entités
   private baseUrl = 'http://localhost:8080/PersonalInfo';
   private baseUrlD = 'http://localhost:8080/Diploma';
   private baseUrlE = 'http://localhost:8080/ExPro'; 
@@ -18,6 +19,7 @@ export class CvService {
 
   constructor(private http: HttpClient) { }
 
+  // Méthodes pour récupérer toutes les informations des différentes entités
   getAllInfos(): Observable<any[]> {
     return this.http.get<any[]>(this.baseUrl); 
   }
@@ -46,6 +48,7 @@ export class CvService {
     return this.http.get<any[]>(this.baseUrlCT); 
   }
 
+  // Méthodes pour supprimer une information spécifique par son ID
   deleteInfo(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
@@ -73,32 +76,33 @@ export class CvService {
   deleteContact(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrlCT}/${id}`);
   }
+
+  // Méthodes pour supprimer toutes les informations de chaque entité
   deleteAllInfo(): Observable<any> {
-    // Effectuez ici la logique pour supprimer toutes les informations de la base de données
     return this.http.delete<any>(this.baseUrl);
   }
+
   deleteAllDiplome(): Observable<any> {
-    // Effectuez ici la logique pour supprimer toutes les informations de la base de données
     return this.http.delete<any>(this.baseUrlD);
   }
+
   deleteAllExpro(): Observable<any> {
-    // Effectuez ici la logique pour supprimer toutes les informations de la base de données
     return this.http.delete<any>(this.baseUrlE);
   }
+
   deleteAllSkill(): Observable<any> {
-    // Effectuez ici la logique pour supprimer toutes les informations de la base de données
     return this.http.delete<any>(this.baseUrlS);
   }
+
   deleteAllCertif(): Observable<any> {
-    // Effectuez ici la logique pour supprimer toutes les informations de la base de données
     return this.http.delete<any>(this.baseUrlC);
   }
+
   deleteAllHobbie(): Observable<any> {
-    // Effectuez ici la logique pour supprimer toutes les informations de la base de données
     return this.http.delete<any>(this.baseUrlH);
   }
+
   deleteAllContact(): Observable<any> {
-    // Effectuez ici la logique pour supprimer toutes les informations de la base de données
     return this.http.delete<any>(this.baseUrlCT);
   }
 }

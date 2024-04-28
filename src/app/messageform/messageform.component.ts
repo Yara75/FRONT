@@ -15,15 +15,15 @@ export class MessageFormComponent {
   constructor(private messageService: MessageService) {}
 
   sendMessage(): void {
-    console.log("Message sending");
+    console.log("Message en cours d'envoi");
     const message: Message = {
       name: this.name, surname: this.surname, contact: this.contact, date: this.date, messagebody: this.messagebody
     }
     this.messageService.sendMessage(message).subscribe(
       (data: any[]) => {this.message = data;},
-      (error: any) => {console.log(error);}
+      (error: any) => {console.log(error,);}
     );
-    console.log("Message sent");
+    console.log("Message envoyé");
   }
 
 }
