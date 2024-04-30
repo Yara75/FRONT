@@ -31,7 +31,7 @@ import { UpdateComponent } from "./update/update.component";
     MessageFormComponent, 
     UpdateComponent,
     InboxComponent,
-    modificationComponent,
+    modificationComponent
   ],
   imports: [
     BrowserModule,
