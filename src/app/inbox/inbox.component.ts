@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from '../models/home.model'
 import { MessageService } from 'services/message.service';
+import { AlertService } from 'services/alert.service';
 
 @Component({
     selector: 'app-cv',
@@ -18,7 +19,7 @@ export class InboxComponent {
      * Constructor
      * @param messageService 
      */
-    constructor(private messageService:MessageService){}
+    constructor(private messageService:MessageService, private alertService:AlertService){}
 
     /**
      * Method ngOnInit
@@ -51,8 +52,13 @@ export class InboxComponent {
         this.messageService.deleteMessageById(id).subscribe(
             () => {
                 console.log("Message deleted");
+                this.openAlert("Message supprimé");
                 this.loadMessages();
             }
         )
+    }
+
+    openAlert(msg:string){
+        this.alertService.displayAlert(msg);
     }
 }

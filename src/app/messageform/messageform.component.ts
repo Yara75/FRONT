@@ -35,11 +35,10 @@ export class MessageFormComponent {
         name: this.name, surname: this.surname, contact: this.contact, date: this.date, messagebody: this.messagebody
       }
       this.messageService.sendMessage(message).subscribe(
-        (data: any[]) => {this.message = data;},
-        (error: any) => {console.log(error,);}
+        (data: any[]) => {this.message = data;this.openAlert("Message envoyé");},
+        (error: any) => {this.openAlert(error,);}
       );
       console.log("Message envoyé");
-      this.openAlert("Message envoyé");
     }
   }
 
