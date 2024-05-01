@@ -19,9 +19,8 @@ public class DiplomaController {
     public List<Diploma> listDiploma(){return diplomaService.findAll();}
 
     @PostMapping("")
-    public String addDiploma(@RequestBody Diploma diplomaTmp){
+    public void addDiploma(@RequestBody Diploma diplomaTmp){
         diplomaService.addDiploma(diplomaTmp);
-        return diplomaTmp.getName()+", "+diplomaTmp.getSchool()+" ("+diplomaTmp.getObtentionDate()+")";
     }
 
     @PostMapping("/{id}")

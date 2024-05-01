@@ -19,9 +19,8 @@ public class ContactController {
     public List<Contact> listContact(){return contactService.findall();}
 
     @PostMapping("")
-    public String addContact(@RequestBody Contact contactTmp) {
+    public void addContact(@RequestBody Contact contactTmp) {
         contactService.addContact(contactTmp);
-        return contactTmp.getType()+":"+contactTmp.getInfo()+" added";
     }
 
     @GetMapping("/{id}")
