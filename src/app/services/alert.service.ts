@@ -5,11 +5,19 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Injectable({
     providedIn:'root'
 })
+/**
+ * Class AlertService : Display a popup for 4 seconds with a given message
+ */
 export class AlertService {
 
     constructor(private snackBar:MatSnackBar){}
 
+    /**
+     * Method displayAlert
+     * @param msg : Message to be shown
+     * @param action 
+     */
     displayAlert(msg: string, action?: string) {
-        this.snackBar.open(msg, action, {duration : 3000});
+        this.snackBar.open(msg, action, {duration : 4000});
     }
 }

@@ -8,13 +8,24 @@ import { AlertService } from 'services/alert.service';
   templateUrl: './messageform.component.html',
   styleUrls: ['./messageform.component.scss']
 })
+/**
+ * Class MessageFormComponent
+ */
 export class MessageFormComponent {
   surname: string = ''; name: string = ''; contact: string = ''; date: Date = new Date; messagebody: string = '';
 
   message: any[]|undefined;
 
+  /**
+   * Constructor
+   * @param messageService 
+   * @param alertService : Required to show a popup message
+   */
   constructor(private messageService: MessageService, private alertService:AlertService) {}
 
+  /**
+   * Method sendMessage : If all form's field are filled, send the message to the back end's database
+   */
   sendMessage(): void {
     console.log("Message en cours d'envoi");
     if (this.surname=='' || this.name=='' || this.contact=='' || this.messagebody=='') {
@@ -32,6 +43,10 @@ export class MessageFormComponent {
     }
   }
 
+  /**
+   * Method openAlert
+   * @param msg : Message to be shown
+   */
   openAlert(msg:string) {
     this.alertService.displayAlert(msg);
   }
