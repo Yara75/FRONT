@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Diploma, Expro, Infos, PersonalInfo } from '../models/infos.model'; // Import des modèles pour les informations personnelles
-import { Certif, Skills, Hobbie, Contact } from 'models/home.model'; // Import des modèles pour les certifications, compétences, centres d'intérêt et contacts
+import { Diploma, Expro, Infos, PersonalInfo, Certif, Skills, Hobbie, Contact } from '../models/infos.model'; // Import des modèles pour les informations personnelles
 
 @Injectable({
   providedIn: 'root'
