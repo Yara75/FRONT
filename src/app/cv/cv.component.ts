@@ -194,8 +194,10 @@ export class CvComponent implements OnInit {
     this.cvService.addContact(contact).subscribe(
       (data: any) => {
         this.openAlert('Infos enregistrées avec succès !');
-        console.log('bahna');
       },
+      (error: any) => {
+        this.openAlert('Erreur lors de l\'enregistrement des infos : ' + error); // Affichage de l'erreur
+      }
     );
   }
 
@@ -218,7 +220,9 @@ export class CvComponent implements OnInit {
     this.cvService.addDiploma(diplomes).subscribe(
       (data: any) => {
         this.openAlert('Infos enregistrées avec succès !');
-        console.log('bahna');
+      },
+      (error: any) => {
+        this.openAlert('Erreur lors de l\'enregistrement des infos : ' + error); // Affichage de l'erreur
       }
     );
   }
