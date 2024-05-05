@@ -58,6 +58,10 @@ export class InboxComponent {
         )
     }
 
+    /**
+     * Method openAlert
+     * @param msg : message to display
+     */
     openAlert(msg:string){
         this.alertService.displayAlert(msg);
     }

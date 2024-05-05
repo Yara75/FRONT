@@ -10,6 +10,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
  */
 export class AlertService {
 
+    /**
+     * Constructor
+     * @param snackBar 
+     */
     constructor(private snackBar:MatSnackBar){}
 
     /**
