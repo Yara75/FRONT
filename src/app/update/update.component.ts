@@ -148,8 +148,20 @@ export class UpdateComponent implements OnInit {
     );
   }
 
+  refresh(): void{
+    this.formSubmitted = false;
+    this.formSubmittedDI = false;
+    this.formSubmittedEX = false;
+    this.formSubmittedSK = false;
+    this.formSubmittedCE = false;
+    this.formSubmittedHO = false;
+    this.formSubmittedCO = false;
+  }
+
+
 
   updateFormPersonalinfo(): void {
+    this.refresh();
     console.log("name = " + this.name + "surname = " + this.surname + "birth = " + this.birth + "id = " + this.id);
     if (!this.surname || !this.name || !this.birth || !this.id) {
         console.log('[UPDATE] Veuillez entrer des données valides');
@@ -175,6 +187,7 @@ export class UpdateComponent implements OnInit {
 
 
   updateFormDiploma(): void {
+    this.refresh();
     console.log("name = " + this.name + "school = " + this.school + "date obtention = " + this.obtentionDate + "id = " + this.id);
     if (!this.name || !this.school  || !this.obtentionDate || !this.id) {
         console.log('[UPDATE] Veuillez entrer des données valides');
@@ -199,6 +212,7 @@ export class UpdateComponent implements OnInit {
   }
 
   updateFormExPro(): void {
+    this.refresh();
     if (!this.nameC || !this.beginD  || !this.endD || !this.job || !this.id) {
         console.log('[UPDATE] Veuillez entrer des données valides');
         return; 
@@ -223,6 +237,7 @@ export class UpdateComponent implements OnInit {
   }
 
   updateFormSkills(): void {
+    this.refresh();
     if (!this.domains || !this.details  || !this.id) {
         console.log('[UPDATE] Veuillez entrer des données valides');
         return; 
@@ -245,6 +260,7 @@ export class UpdateComponent implements OnInit {
   }
 
   updateFormCertif(): void {
+    this.refresh();
     if (!this.name || !this.domain  || !this.id) {
         console.log('[UPDATE] Veuillez entrer des données valides');
         return; 
@@ -267,6 +283,7 @@ export class UpdateComponent implements OnInit {
   }
 
   updateFormHobbie(): void {
+    this.refresh();
     if (!this.description || !this.id) {
         console.log('[UPDATE] Veuillez entrer des données valides');
         return; 
@@ -288,6 +305,7 @@ export class UpdateComponent implements OnInit {
   }
 
   updateFormContact(): void {
+    this.refresh();
     if (!this.info || !this.type || !this.id) {
         console.log('[UPDATE] Veuillez entrer des données valides');
         return; 
