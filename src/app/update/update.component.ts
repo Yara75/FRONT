@@ -17,6 +17,14 @@ import {PersonalInfo, Diploma, Expro } from '../models/infos.model';
 })
 
 export class UpdateComponent implements OnInit {
+  formSubmitted: boolean = false;
+  formSubmittedDI: boolean = false;
+  formSubmittedEX: boolean = false;
+  formSubmittedSK: boolean = false;
+  formSubmittedCE: boolean = false;
+  formSubmittedHO: boolean = false;
+  formSubmittedCO: boolean = false;
+
   nom: string = '';
   prenom: string = '';
   id: number = 0;
@@ -35,6 +43,7 @@ export class UpdateComponent implements OnInit {
   info: string = '';
   surname: string = '';
   birth: Date = new Date();
+
   infos: Infos[] = [];
   diplomes: Diplome[] = [];
   expro: ExPro[] = [];
@@ -157,6 +166,7 @@ export class UpdateComponent implements OnInit {
     this.cvService.updatePersonalInfo(personalinfo, this.id).subscribe(
         (data: any) => {
             console.log('Infos enregistrées avec succès !', data);
+            this.formSubmitted = true; 
         },
         (error: any) => {
             console.log('Erreur lors de l\'enregistrement des infos : ', error);
@@ -182,6 +192,7 @@ export class UpdateComponent implements OnInit {
     this.cvService.updateDiplomaById(diplomes, this.id).subscribe(
         (data: any) => {
             console.log('Infos enregistrées avec succès !', data);
+            this.formSubmittedDI = true;
         },
         (error: any) => {
             console.log('Erreur lors de l\'enregistrement des infos : ', error);
@@ -206,6 +217,7 @@ export class UpdateComponent implements OnInit {
     this.cvService.updateExProById(expro, this.id).subscribe(
         (data: any) => {
             console.log('Infos enregistrées avec succès !', data);
+            this.formSubmittedEX = true;
         },
         (error: any) => {
             console.log('Erreur lors de l\'enregistrement des infos : ', error);
@@ -228,6 +240,7 @@ export class UpdateComponent implements OnInit {
     this.cvService.updateSkillsById(skills, this.id).subscribe(
         (data: any) => {
             console.log('Infos enregistrées avec succès !', data);
+            this.formSubmittedSK = true;
         },
         (error: any) => {
             console.log('Erreur lors de l\'enregistrement des infos : ', error);
@@ -250,6 +263,7 @@ export class UpdateComponent implements OnInit {
     this.cvService.updateCertifById(certif, this.id).subscribe(
         (data: any) => {
             console.log('Infos enregistrées avec succès !', data);
+            this.formSubmittedCE = true;
         },
         (error: any) => {
             console.log('Erreur lors de l\'enregistrement des infos : ', error);
@@ -271,6 +285,30 @@ export class UpdateComponent implements OnInit {
     this.cvService.updateHobbie(hobbie, this.id).subscribe(
         (data: any) => {
             console.log('Infos enregistrées avec succès !', data);
+            this.formSubmittedHO = true;
+        },
+        (error: any) => {
+            console.log('Erreur lors de l\'enregistrement des infos : ', error);
+        }
+    );
+  }
+
+  updateFormContact(): void {
+    if (!this.info || !this.type || !this.id) {
+        console.log('[UPDATE] Veuillez entrer des données valides');
+        return; 
+    }  
+    console.log('ok nous sommes passés');
+
+    const contact: Contact = {
+      info: this.info,
+      type: this.type
+    };
+    
+    this.cvService.updateContactById(contact, this.id).subscribe(
+        (data: any) => {
+            console.log('Infos enregistrées avec succès !', data);
+            this.formSubmittedCO = true;
         },
         (error: any) => {
             console.log('Erreur lors de l\'enregistrement des infos : ', error);

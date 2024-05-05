@@ -27,7 +27,7 @@ export class CvService {
   // Ajouter un diplôme
   addDiploma(diplomes : Diploma): Observable<any>{
     console.log('Appel de la méthode addDiploma() avec les informations:', diplomes);
-    return this.http.post<any>('http://localhost:8080/Diploma', diplomes);
+    return this.http.post<any>('http://localhost:8080/Diploma/enregistrer', diplomes);
   }  
 
   // Ajouter une expérience professionnelle
@@ -36,6 +36,7 @@ export class CvService {
     return this.http.post<any>('http://localhost:8080/ExPro', expro);
   } 
   
+
   // Ajouter des compétences
   addSkills(skills : Skills): Observable<any>{
     console.log('Appel de la méthode addSkills() avec les informations:', skills);
@@ -65,4 +66,5 @@ export class CvService {
     console.log('Appel de la méthode addpersonalinfo() avec les informations:', personalinfo);
     return this.http.post<any>('http://localhost:8080/PersonalInfo', personalinfo);
   }
+  
 }

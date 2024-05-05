@@ -72,7 +72,7 @@ export class CvService {
  
   // Méthode pour mettre à jour une expérience professionnelle par son ID
   updateExProById(expro: ExPro, id: number): Observable<any> {
-    console.log('Appel de la méthode updateDiploma() avec les informations:', expro);
+    console.log('Appel de la méthode updateExpro() avec les informations:', expro);
     console.log(id);
     const numericId: number = Number(id); 
     return this.http.post<any>(`http://localhost:8080/ExPro/${numericId}`, expro);
@@ -80,11 +80,12 @@ export class CvService {
 
   // Méthode pour mettre à jour des compétences par leur ID
   updateSkillsById(skills: Skills, id: number): Observable<any> {
-    console.log('Appel de la méthode updateDiploma() avec les informations:', skills);
+    console.log('Appel de la méthode updateSkills() avec les informations:', skills);
     console.log(id);
     const numericId: number = Number(id); 
     return this.http.post<any>(`http://localhost:8080/Skills/${numericId}`, skills);
   }
+
 
   // Méthode pour mettre à jour une certification par son ID
   updateCertifById(certif: Certif, id: number): Observable<any> {
@@ -101,4 +102,12 @@ export class CvService {
     const numericId: number = Number(id); 
     return this.http.post<any>(`http://localhost:8080/Hobbie/${numericId}`, hobbie);
   }
+
+  updateContactById(contact: Contact, id: number): Observable<any> {
+    console.log('Appel de la méthode updateContact() avec les informations:', contact);
+    console.log(id);
+    const numericId: number = Number(id); 
+    return this.http.post<any>(`http://localhost:8080/Contact/${numericId}`, contact);
+  }
+  
 }

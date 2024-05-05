@@ -26,11 +26,13 @@
   <label class="label">Informations personnelles</label>
   <ul>
     <li *ngFor="let info of infos">
-      {{ info.surname }} - {{ info.name }} - {{ info.birth }}
+      {{ info.surname }} - {{ info.name }} - {{ info.birth | date:'longDate' }}
     </li>
   </ul>
 </div>
+
 <h1></h1>
+
 <div class="label-container">
   <label class="label">Diplômes</label>
   <ul>
@@ -39,7 +41,9 @@
     </li>
   </ul>
 </div>
+
 <h1></h1>
+
 <div class="label-container">
   <label class="label">Expériences professionnelles </label>
   <ul>
@@ -48,7 +52,9 @@
     </li>
   </ul>
 </div>
+
 <h1></h1>
+
 <div class="label-container">
   <label class="label">Compétences techniques </label>
   <ul>
@@ -57,7 +63,9 @@
     </li>
   </ul>
 </div>
+
 <h1></h1>
+
 <div class="label-container">
   <label class="label">Certifications</label>
   <ul>
@@ -66,7 +74,9 @@
     </li>
   </ul>
 </div>
+
 <h1></h1>
+
 <div class="label-container">
   <label class="label">Centres d'intérêt</label>
   <ul>
@@ -75,7 +85,9 @@
     </li>
   </ul>
 </div>
+
 <h1></h1>
+
 <div class="label-container">
   <label class="label">Contact</label>
   <ul>
