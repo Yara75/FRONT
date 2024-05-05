@@ -1,5 +1,6 @@
 package com.takima.backskeleton.controllers;
 
+import com.takima.backskeleton.models.Diploma;
 import com.takima.backskeleton.models.ExPro;
 import com.takima.backskeleton.models.PersonalInfo;
 import com.takima.backskeleton.services.ExProService;
@@ -29,8 +30,13 @@ public class ExProController {
     }
 
     @PostMapping("")
-    public void addPersonalInfo(@RequestBody ExPro ExPro) {
+    public void addPro(@RequestBody ExPro ExPro) {
         exProService.addInfo(ExPro);
+    }
+
+    @PostMapping("/{id}")
+    public void updateDiplomaById(@PathVariable Long id, @RequestBody ExPro exproTmp) {
+        exProService.updateById(exproTmp, id);
     }
 
     @DeleteMapping("")

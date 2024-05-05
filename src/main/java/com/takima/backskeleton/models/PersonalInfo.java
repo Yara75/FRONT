@@ -34,5 +34,4 @@ public class PersonalInfo {
         this.name = name;
 
     }
-
 }

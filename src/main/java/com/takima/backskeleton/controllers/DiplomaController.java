@@ -18,7 +18,7 @@ public class DiplomaController {
     @GetMapping("")
     public List<Diploma> listDiploma(){return diplomaService.findAll();}
 
-    @PostMapping("")
+    @PostMapping("/enregistrer")
     public void addDiploma(@RequestBody Diploma diplomaTmp){
         diplomaService.addDiploma(diplomaTmp);
     }

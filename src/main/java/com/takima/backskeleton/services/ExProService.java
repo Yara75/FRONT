@@ -38,4 +38,9 @@ public class ExProService {
 
     @Transactional
     public void deleteById(long id){exProDao.deleteById(id);}
+
+    @Transactional
+    public void updateById(ExPro exproTmp, Long id) {
+        exProDao.updateById(exproTmp.getNameC(), exproTmp.getBeginD(), exproTmp.getEndD(), exproTmp.getJob(), id);
+    }
 }

@@ -45,6 +45,7 @@ public class PersonalInfoService {
 
     @Transactional
     public void updatePersonalInfo(PersonalInfo personalInfoTmp, Long id) {
+        System.out.println("côté BACK");
         personalInfoDao.updateInfo(personalInfoTmp.getSurname(), personalInfoTmp.getName(), personalInfoTmp.getBirth(), id);
     }
 

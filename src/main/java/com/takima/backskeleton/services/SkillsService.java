@@ -39,4 +39,8 @@ public class SkillsService {
     @Transactional
     public void deleteById(long id){skillsDao.deleteById(id);}
 
+    @Transactional
+    public void updateById(Skills skillsTmp, Long id) {
+        skillsDao.updateById(skillsTmp.getDomains(), skillsTmp.getDetails(), id);
+    }
 }

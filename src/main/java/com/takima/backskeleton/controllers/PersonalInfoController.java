@@ -3,6 +3,8 @@ package com.takima.backskeleton.controllers;
 import com.takima.backskeleton.models.PersonalInfo;
 import com.takima.backskeleton.services.PersonalInfoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,6 +42,10 @@ public class PersonalInfoController {
 
     @PostMapping("/{id}")
     public void updatePersonalInfo(@RequestBody PersonalInfo personalInfo, @PathVariable Long id) {
+
+        //updatePersonalInfo(personalInfo, id);
         personalInfoService.addInfo(personalInfo);
     }
+
+
 }

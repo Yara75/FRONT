@@ -42,6 +42,7 @@ public class DiplomaService {
         diplomaDao.save(diplomaTmp);
     }
 
+    @Transactional
     public void updateById(Diploma diplomaTmp, Long id){
         if (diplomaDao.findById(id).isEmpty()) {
             diplomaDao.save(diplomaTmp);

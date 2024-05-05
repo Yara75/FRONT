@@ -1,5 +1,6 @@
 package com.takima.backskeleton.controllers;
 
+import com.takima.backskeleton.models.ExPro;
 import com.takima.backskeleton.models.Skills;
 import com.takima.backskeleton.services.SkillsService;
 import lombok.RequiredArgsConstructor;
@@ -28,6 +29,11 @@ public class SkillsController {
     @PostMapping("")
     public void addSkills(@RequestBody Skills Skills) {
         skillsService.addInfo(Skills);
+    }
+
+    @PostMapping("/{id}")
+    public void updateSkillsById(@PathVariable Long id, @RequestBody Skills skillsTmp) {
+        skillsService.updateById(skillsTmp, id);
     }
 
     @DeleteMapping("")

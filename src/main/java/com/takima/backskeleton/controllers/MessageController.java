@@ -18,6 +18,8 @@ public class MessageController {
     private final MessageService messageService;
 
     @GetMapping("")
+
+
     public List<Message> findAll() {return messageService.findAll();}
 
     @GetMapping("/{id}")
