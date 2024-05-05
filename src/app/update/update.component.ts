@@ -155,7 +155,6 @@ export class UpdateComponent implements OnInit {
         console.log('[UPDATE] Veuillez entrer des données valides');
         return; 
     }  
-    console.log('ok nous sommes passés');
 
     const personalinfo: PersonalInfo = {
       surname: this.surname,
@@ -181,7 +180,6 @@ export class UpdateComponent implements OnInit {
         console.log('[UPDATE] Veuillez entrer des données valides');
         return; 
     }  
-    console.log('ok nous sommes passés');
 
     const diplomes: Diploma = {
       obtentionDate: this.obtentionDate,
@@ -205,7 +203,6 @@ export class UpdateComponent implements OnInit {
         console.log('[UPDATE] Veuillez entrer des données valides');
         return; 
     }  
-    console.log('ok nous sommes passés');
 
     const expro: Expro = {
       nameC: this.nameC,
@@ -230,7 +227,6 @@ export class UpdateComponent implements OnInit {
         console.log('[UPDATE] Veuillez entrer des données valides');
         return; 
     }  
-    console.log('ok nous sommes passés');
 
     const skills: Skills = {
       domains: this.domains,
@@ -253,7 +249,6 @@ export class UpdateComponent implements OnInit {
         console.log('[UPDATE] Veuillez entrer des données valides');
         return; 
     }  
-    console.log('ok nous sommes passés');
 
     const certif: Certif = {
       name: this.name,
@@ -276,7 +271,6 @@ export class UpdateComponent implements OnInit {
         console.log('[UPDATE] Veuillez entrer des données valides');
         return; 
     }  
-    console.log('ok nous sommes passés');
 
     const hobbie: Hobbie = {
       description: this.description
@@ -298,7 +292,6 @@ export class UpdateComponent implements OnInit {
         console.log('[UPDATE] Veuillez entrer des données valides');
         return; 
     }  
-    console.log('ok nous sommes passés');
 
     const contact: Contact = {
       info: this.info,
