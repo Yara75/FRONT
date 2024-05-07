@@ -26,6 +26,15 @@ export class MessageFormComponent {
   /**
    * Method sendMessage : If all form's field are filled, send the message to the back end's database
    */
+
+  reset(): void {
+    this.surname = '';
+    this.name = '';
+    this.contact = '';
+    this.date = new Date(); // Réinitialisation de la date à la date actuelle
+    this.messagebody = '';
+  }
+  
   sendMessage(): void {
     console.log("Message en cours d'envoi");
     if (this.surname=='' || this.name=='' || this.contact=='' || this.messagebody=='') {
@@ -39,6 +48,7 @@ export class MessageFormComponent {
         (error: any) => {this.openAlert(error,);}
       );
       console.log("Message envoyé");
+      this.reset();
     }
   }
 
