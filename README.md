@@ -4,7 +4,7 @@
 
 ## I. Mise en place
 
-Après avoir télécharger les fichier, ouvrez le répertoire **back** comme un projet sur Intellij IDEA Ultimate :
+Après avoir télécharger les fichier, ouvrez le répertoire **back** comme un projet sur Intellij IDEA Ultimate ou utilisez Intellij pour cloner la branch **back** :
 - lancer l'image Docker contenant la base de données avec la commande ```docker-compose up```
 - établissez ensuite une connexion avec la base de donnée depuis l'interface d'Intellij
 - pour créer les tables dans la base de donnée, exécutez sur celle-ci les fichiers SQL ```initdb/1_TABLES.sql```
@@ -12,7 +12,7 @@ Après avoir télécharger les fichier, ouvrez le répertoire **back** comme un 
 - vous pouvez ensuite lancer le projet
 - si la ligne ```#### Application working ####``` apparaît en sortie alors le back end fonctionne parfaitement
 
-Vous pouvez ensuite vous placer dans le répertoire **front** et lancer les commande ```npm i``` et ```npm start```.
+Vous pouvez ensuite vous placer dans le répertoire **front** ou cloner la branch **front** et lancer les commande ```npm i``` et ```npm start``` depuis un terminal.
 
 L'application web sera accessible depuis un navigateur via l'URL <http://localhost:4200/>.
 
